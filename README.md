@@ -14,7 +14,7 @@ JSON fixtures that ship with the application.
 ## Quick start
 
 ```bash
-cd poc-server
+cd int-server
 npm install
 cp .env.example .env          # then set SESSION_TOKEN to any value you like
 npm run start:dev
@@ -38,7 +38,7 @@ server's `SESSION_TOKEN` environment variable.
 | | |
 |---|---|
 | Header | `X-SESSION: <token>` |
-| Source of truth | `SESSION_TOKEN` env var (a Heroku config var in a deployed environment) |
+| Source of truth | `SESSION_TOKEN` env var (a Render environment variable in a deployed environment) |
 | Missing / wrong token | `401 Unauthorized` |
 | Not configured on the server | `401 Unauthorized` — the guard fails closed, it never opens up |
 | Exempt routes | `GET /health`, the Swagger UI and the OpenAPI documents |
@@ -119,7 +119,7 @@ requirements verbatim, so the documented sample queries always return a predicta
 The list endpoint projects the stored summary onto the flatter response contract given in
 the requirements (`country` and `status` are flattened to scalars). `nest-cli.json` copies
 both files next to the compiled output, so the same relative path resolves in development,
-in tests and in the Heroku slug.
+in tests and in the deployed build.
 
 ---
 
@@ -129,7 +129,7 @@ in tests and in the Heroku slug.
 |---|---|
 | `npm run start:dev` | Watch-mode development server |
 | `npm run build` | Compile to `dist/` and copy the JSON fixtures |
-| `npm run start:prod` | Run the compiled server (what Heroku's `Procfile` calls) |
+| `npm run start:prod` | Run the compiled server (Render's start command) |
 | `npm test` | Unit tests (service, repository, guard) |
 | `npm run test:e2e` | HTTP-level tests over the whole app, incl. auth and OpenAPI |
 | `npm run test:cov` | Unit tests with coverage |
@@ -145,59 +145,68 @@ Validated at boot with Joi — the process refuses to start on a bad configurati
 | Variable | Required | Default | Purpose |
 |---|---|---|---|
 | `SESSION_TOKEN` | **yes** | — | Expected `X-SESSION` value (min. 8 characters) |
-| `PORT` | no | `3000` | Injected by Heroku |
+| `PORT` | no | `3000` | Injected by Render |
 | `NODE_ENV` | no | `development` | `development` \| `production` \| `test` |
 | `SWAGGER_ENABLED` | no | `true` | Set to `false` to hide `/api-docs` |
 | `CORS_ORIGINS` | no | `*` | Comma-separated allow-list, or `*` |
 
 ---
 
-## Deploying to Heroku
+## Deploying to Render
 
-The app is deploy-ready: it binds `0.0.0.0:$PORT`, ships a `Procfile`, pins a Node
-version in `engines`, exposes an unauthenticated `/health` probe for the platform check,
-and declares its config in `app.json`.
+The app is deploy-ready: it binds `0.0.0.0:$PORT`, pins a Node version in `engines` and
+`.node-version`, exposes an unauthenticated `/health` probe for the platform check, and
+declares the whole service — build command, start command, health check and environment
+— in `render.yaml` at the repository root.
 
-Because the repository root holds this project in a `poc-server/` subdirectory, either
-push the subdirectory as the app root or add the monorepo buildpack.
+Because the service lives in the `int-server/` subdirectory, `render.yaml` sets
+`rootDir: int-server`; every build and start command runs from there.
 
-**Option A — push the subdirectory (simplest):**
+**Option A — Blueprint (recommended, config lives in the repo):**
 
-```bash
-heroku create integritynext-poc-server
-heroku config:set NODE_ENV=production SWAGGER_ENABLED=true \
-  SESSION_TOKEN="$(node -e "console.log(require('crypto').randomBytes(32).toString('hex'))")"
+1. Push this repository to GitHub/GitLab.
+2. In Render: **New → Blueprint**, select the repository.
+3. Render reads `render.yaml`, creates the web service and generates a `SESSION_TOKEN`
+   for you. Copy it from **Environment** in the dashboard to hand out to clients.
 
-# from the repository root, push only poc-server/ as the app root
-git subtree push --prefix poc-server heroku main
-```
+**Option B — manual web service:**
 
-**Option B — keep the monorepo layout:**
+| Setting | Value |
+|---|---|
+| Runtime | Node |
+| Root directory | `int-server` |
+| Build command | `npm ci && npm run build` |
+| Start command | `npm run start:prod` |
+| Health check path | `/health` |
+| Environment | `NODE_ENV=production`, `SESSION_TOKEN=<generate a secret>`, `SWAGGER_ENABLED`, `CORS_ORIGINS` |
 
-```bash
-heroku buildpacks:add -i 1 https://github.com/lstoll/heroku-buildpack-monorepo
-heroku config:set APP_BASE=poc-server
-heroku buildpacks:add -i 2 heroku/nodejs
-git push heroku main
-```
-
-Heroku's Node buildpack runs `npm run build` automatically, then `Procfile`'s
-`web: node dist/main.js`. Verify with:
+Generate a token with:
 
 ```bash
-curl https://<your-app>.herokuapp.com/health
-curl -H "X-SESSION: $SESSION_TOKEN" https://<your-app>.herokuapp.com/api/v1/suppliers?limit=2
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
-> Rotating the secret is `heroku config:set SESSION_TOKEN=<new value>` — it restarts the
-> dyno and takes effect immediately.
+Verify the deploy:
+
+```bash
+curl https://<your-service>.onrender.com/health
+curl -H "X-SESSION: $SESSION_TOKEN" \
+  "https://<your-service>.onrender.com/api/v1/suppliers?limit=2"
+```
+
+> **Rotating the secret** — update `SESSION_TOKEN` in the Render dashboard; the service
+> redeploys and the new value takes effect immediately.
+>
+> **Cold starts** — `render.yaml` requests the `free` plan, which spins the instance down
+> after inactivity, so the first request afterwards is slow. Switch `plan` to `starter`
+> for an always-on PoC.
 
 ---
 
 ## Project layout
 
 ```
-poc-server/
+int-server/
 ├── src/
 │   ├── common/            # cross-cutting: session guard, error filter, shared DTOs
 │   ├── config/            # typed configuration + Joi env validation
@@ -209,9 +218,15 @@ poc-server/
 │   └── main.ts
 ├── scripts/               # seeded fixture generator
 ├── test/                  # e2e specs
-├── app.json               # Heroku app manifest
-├── Procfile               # web: node dist/main.js
+├── .node-version          # Node version for the Render build
 └── improvements.md        # what to change before this becomes a real service
 ```
 
-The repository-level requirements live in `../server-requirements.md`.
+At the repository root, alongside this project:
+
+```
+intNext/
+├── int-server/            # this project
+├── render.yaml            # Render Blueprint (rootDir: int-server)
+└── server-requirements.md # the original requirements
+```

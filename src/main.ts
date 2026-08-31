@@ -47,7 +47,7 @@ async function bootstrap(): Promise<void> {
   }
 
   const port = configService.get<number>('port') ?? 3000;
-  // 0.0.0.0 is required for the app to be reachable inside a Heroku dyno.
+  // 0.0.0.0 is required for the app to be reachable inside a Render container.
   await app.listen(port, '0.0.0.0');
 
   logger.log(`API listening on port ${port}`);

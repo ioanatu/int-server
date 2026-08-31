@@ -1,7 +1,0 @@
-# Excluded from the Heroku slug — not needed at runtime.
-/test
-/coverage
-*.spec.ts
-/scripts
-server-requirements.md
-improvements.md

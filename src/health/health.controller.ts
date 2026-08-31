@@ -10,7 +10,7 @@ class HealthResponseDto {
 
 /**
  * Unauthenticated liveness probe. Kept outside the versioned `/api` prefix so
- * platform health checks (Heroku, uptime monitors) do not need the session token
+ * platform health checks (Render, uptime monitors) do not need the session token
  * and are not tied to an API version.
  */
 @ApiTags('Health')

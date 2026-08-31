@@ -14,8 +14,8 @@ import { IS_PUBLIC_KEY, SESSION_HEADER } from '../constants';
 /**
  * Gates every request on a shared secret delivered in the `X-SESSION` header.
  *
- * The expected value comes from the `SESSION_TOKEN` environment variable (a Heroku
- * config var in a deployed environment) and is never checked into the repository.
+ * The expected value comes from the `SESSION_TOKEN` environment variable (a Render
+ * environment variable in a deployed environment) and is never checked into the repository.
  */
 @Injectable()
 export class SessionGuard implements CanActivate {

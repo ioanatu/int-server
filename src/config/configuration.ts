@@ -18,7 +18,7 @@ const parseCorsOrigins = (raw: string | undefined): string[] | boolean => {
 
 export default (): AppConfig => ({
   nodeEnv: process.env.NODE_ENV ?? 'development',
-  // Heroku assigns the port at boot; never hard-code it.
+  // Render assigns the port at boot; never hard-code it.
   port: parseInt(process.env.PORT ?? '3000', 10),
   sessionToken: process.env.SESSION_TOKEN ?? '',
   swaggerEnabled: (process.env.SWAGGER_ENABLED ?? 'true').toLowerCase() !== 'false',
