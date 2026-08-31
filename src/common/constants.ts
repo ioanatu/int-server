@@ -5,7 +5,7 @@ export const SESSION_HEADER = 'x-session';
 export const SESSION_SECURITY_SCHEME = 'X-SESSION';
 
 /** Metadata key marking a route as reachable without the session header. */
-export const IS_PUBLIC_KEY = 'integritynext:isPublic';
+export const IS_PUBLIC_KEY = 'intnext:isPublic';
 
 export const API_PREFIX = 'api';
 export const SWAGGER_PATH = 'api-docs';

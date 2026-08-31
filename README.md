@@ -1,4 +1,4 @@
-# IntegrityNext PoC Server
+# IntNext PoC Server
 
 Read-only REST API serving supplier master data, built with **NestJS 11 + TypeScript**.
 This is a proof of concept: it has **no database** — every response is served from two

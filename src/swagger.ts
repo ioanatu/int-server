@@ -8,10 +8,10 @@ import { SESSION_HEADER, SESSION_SECURITY_SCHEME, SWAGGER_PATH } from './common/
  */
 export function setupSwagger(app: INestApplication): void {
   const config = new DocumentBuilder()
-    .setTitle('IntegrityNext PoC API')
+    .setTitle('IntNext PoC API')
     .setDescription(
       [
-        'Read-only REST API serving supplier master data for the IntegrityNext proof of concept.',
+        'Read-only REST API serving supplier master data for the IntNext proof of concept.',
         '',
         '**Authentication** — every request to `/api/**` must carry an `X-SESSION` header whose',
         'value matches the `SESSION_TOKEN` configured on the server. Use the *Authorize* button',
@@ -22,7 +22,7 @@ export function setupSwagger(app: INestApplication): void {
       ].join('\n'),
     )
     .setVersion('1.0')
-    .setContact('IntegrityNext PoC', 'https://github.com/', 'poc@example.com')
+    .setContact('IntNext PoC', 'https://github.com/', 'poc@example.com')
     .setLicense('UNLICENSED', '')
     .addServer('/', 'Current host')
     .addTag('Suppliers', 'Read access to supplier master data')
@@ -43,7 +43,7 @@ export function setupSwagger(app: INestApplication): void {
   SwaggerModule.setup(SWAGGER_PATH, app, document, {
     jsonDocumentUrl: `${SWAGGER_PATH}-json`,
     yamlDocumentUrl: `${SWAGGER_PATH}-yaml`,
-    customSiteTitle: 'IntegrityNext PoC API — Reference',
+    customSiteTitle: 'IntNext PoC API — Reference',
     swaggerOptions: {
       persistAuthorization: true,
       displayRequestDuration: true,

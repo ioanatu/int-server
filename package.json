@@ -1,7 +1,7 @@
 {
   "name": "intnext-server",
   "version": "1.0.0",
-  "description": "IntegrityNext PoC REST API — read-only supplier endpoints backed by static JSON fixtures.",
+  "description": "IntNext PoC REST API — read-only supplier endpoints backed by static JSON fixtures.",
   "license": "UNLICENSED",
   "private": true,
   "engines": {

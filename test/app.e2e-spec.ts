@@ -10,7 +10,7 @@ import { setupSwagger } from '../src/swagger';
 const SESSION_TOKEN = process.env.SESSION_TOKEN as string;
 const BASE = `/${API_PREFIX}/v1/suppliers`;
 
-describe('IntegrityNext PoC API (e2e)', () => {
+describe('IntNext PoC API (e2e)', () => {
   let app: INestApplication;
 
   beforeAll(async () => {
@@ -190,7 +190,7 @@ describe('IntegrityNext PoC API (e2e)', () => {
       const response = await request(app.getHttpServer()).get('/api-docs-json').expect(200);
 
       expect(response.body.openapi).toMatch(/^3\./);
-      expect(response.body.info.title).toBe('IntegrityNext PoC API');
+      expect(response.body.info.title).toBe('IntNext PoC API');
       expect(Object.keys(response.body.paths)).toEqual(
         expect.arrayContaining([`${BASE}`, `${BASE}/{supplierId}`]),
       );

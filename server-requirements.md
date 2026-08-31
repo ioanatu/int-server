@@ -95,11 +95,11 @@ Build a ready-to-deploy PoC REST API with NestJS and TypeScript. Requirements:
   }
 
 3.  supports only the read CRUD operation
-4.  instantiate a git repository called “integrityNext” in Desktop/code and create the server project in a new directory called “poc-server” in in Desktop/code/integrityNext
+4.  instantiate a git repository called “intNext” in Desktop/code and create the server project in a new directory called “int-server” in in Desktop/code/intNext
 5.  expose the following endpoints delivering the data from the two files suppliers and supplier:
     - GET /api/v1/suppliers
     - GET /api/v1/suppliers/{supplierId}
-6.  move this md file to the integrityNext directory and call it “server-requirements”
+6.  move this md file to the intNext directory and call it “server-requirements”
 7.  add as first commit the markdown file containing these requirements
 8.  add as second commit the code you generated from these requirements
 9.  write necessary tests
@@ -138,5 +138,5 @@ Response:
 }
 
 12. Each client API request must include an HTTP header named `X-SESSION`. The value of this header should be a token stored as a secret or variable.
-13. the server should be deployed to heroku, so prepare app for this step
-14. except the missing database, please consider best practices and suggest improvements for this PoC in a separate markdown file named "improvements.md" stored in the Desktop/code/integrityNext/server directory
+13. the server should be deployed to Render, so prepare app for this step
+14. except the missing database, please consider best practices and suggest improvements for this PoC in a separate markdown file named "improvements.md" stored in the Desktop/code/intNext/int-server directory
