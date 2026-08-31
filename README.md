@@ -1,12 +1,13 @@
 # IntNext PoC Server
 
 REST API serving supplier data, built with **NestJS 11 + TypeScript**.
-This is a proof of concept: it has **no database** — every response is served from two JSON fixtures with hard-coded. Only read CRUD operation is supported.
+This is a proof of concept: it has **no database** — every response is served from two JSON fixtures with hard-coded dummy data. Only read CRUD operation is supported.
 
 - Base path: `/api/v1`
 - Swagger UI: `/api-docs`
 - OpenAPI document: `/api-docs-json` (and `/api-docs-yaml`)
 - Health probe: `/health` (unauthenticated)
+- Deployed: `https://int-server-ytx6.onrender.com/api-docs`
 
 ---
 
