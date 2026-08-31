@@ -14,6 +14,7 @@ JSON fixtures that ship with the application.
 ## Quick start
 
 ```bash
+git clone git@github.com:ioanatu/int-server.git
 cd int-server
 npm install
 cp .env.example .env          # then set SESSION_TOKEN to any value you like
@@ -159,8 +160,8 @@ The app is deploy-ready: it binds `0.0.0.0:$PORT`, pins a Node version in `engin
 declares the whole service — build command, start command, health check and environment
 — in `render.yaml` at the repository root.
 
-Because the service lives in the `int-server/` subdirectory, `render.yaml` sets
-`rootDir: int-server`; every build and start command runs from there.
+`render.yaml` sits at the repository root, so Render picks it up with no extra
+configuration.
 
 **Option A — Blueprint (recommended, config lives in the repo):**
 
@@ -174,7 +175,7 @@ Because the service lives in the `int-server/` subdirectory, `render.yaml` sets
 | Setting | Value |
 |---|---|
 | Runtime | Node |
-| Root directory | `int-server` |
+| Root directory | *(repository root)* |
 | Build command | `npm ci && npm run build` |
 | Start command | `npm run start:prod` |
 | Health check path | `/health` |
@@ -219,14 +220,7 @@ int-server/
 ├── scripts/               # seeded fixture generator
 ├── test/                  # e2e specs
 ├── .node-version          # Node version for the Render build
-└── improvements.md        # what to change before this becomes a real service
-```
-
-At the repository root, alongside this project:
-
-```
-intNext/
-├── int-server/            # this project
-├── render.yaml            # Render Blueprint (rootDir: int-server)
-└── server-requirements.md # the original requirements
+├── render.yaml            # Render Blueprint
+├── improvements.md        # what to change before this becomes a real service
+└── server-requirements.md # the original requirements this PoC was built from
 ```

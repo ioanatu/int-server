@@ -8,8 +8,6 @@ services:
     # request afterwards pays a cold start. Move to `starter` for a always-on PoC.
     plan: free
     region: frankfurt
-    # The service lives in a subdirectory; every command below runs from here.
-    rootDir: int-server
     buildCommand: npm ci && npm run build
     startCommand: npm run start:prod
     # Unauthenticated liveness probe — Render marks the deploy live once this returns 200.
