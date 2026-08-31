@@ -1,8 +1,7 @@
 # IntNext PoC Server
 
-Read-only REST API serving supplier master data, built with **NestJS 11 + TypeScript**.
-This is a proof of concept: it has **no database** — every response is served from two
-JSON fixtures that ship with the application.
+REST API serving supplier data, built with **NestJS 11 + TypeScript**.
+This is a proof of concept: it has **no database** — every response is served from two JSON fixtures with hard-coded. Only read CRUD operation is supported.
 
 - Base path: `/api/v1`
 - Swagger UI: `/api-docs`
@@ -17,12 +16,11 @@ JSON fixtures that ship with the application.
 git clone git@github.com:ioanatu/int-server.git
 cd int-server
 npm install
-cp .env.example .env          # then set SESSION_TOKEN to any value you like
+cp .env.example .env          # set SESSION_TOKEN value
 npm run start:dev
 ```
 
-Then open <http://localhost:3000/api-docs>, press **Authorize**, and paste your
-`SESSION_TOKEN`. Every request from the docs page will carry the header from then on.
+Then open <http://localhost:3000/api-docs>, press **Authorize**, and paste your `SESSION_TOKEN`. Every request from the docs page will carry the header from then on.
 
 ```bash
 curl -H "X-SESSION: $SESSION_TOKEN" \
@@ -36,13 +34,13 @@ curl -H "X-SESSION: $SESSION_TOKEN" \
 Every request to `/api/**` must carry an `X-SESSION` header whose value matches the
 server's `SESSION_TOKEN` environment variable.
 
-| | |
-|---|---|
-| Header | `X-SESSION: <token>` |
-| Source of truth | `SESSION_TOKEN` env var (a Render environment variable in a deployed environment) |
-| Missing / wrong token | `401 Unauthorized` |
-| Not configured on the server | `401 Unauthorized` — the guard fails closed, it never opens up |
-| Exempt routes | `GET /health`, the Swagger UI and the OpenAPI documents |
+|                              |                                                                                   |
+| ---------------------------- | --------------------------------------------------------------------------------- |
+| Header                       | `X-SESSION: <token>`                                                              |
+| Source of truth              | `SESSION_TOKEN` env var (a Render environment variable in a deployed environment) |
+| Missing / wrong token        | `401 Unauthorized`                                                                |
+| Not configured on the server | `401 Unauthorized` — the guard fails closed, it never opens up                    |
+| Exempt routes                | `GET /health`, the Swagger UI and the OpenAPI documents                           |
 
 The token is never committed. It is compared in constant time so the comparison cannot
 be used as an oracle, and `.env` is git-ignored.
@@ -56,16 +54,16 @@ be used as an oracle, and `.env` is git-ignored.
 Paginated, searchable, filterable list. All query parameters are optional and are
 combined with **AND**.
 
-| Parameter | Type | Notes |
-|---|---|---|
-| `search` | string | Case-insensitive substring match across id, name, industry, country name and country code |
-| `country` | string | ISO 3166-1 alpha-2, case-insensitive (`de` = `DE`) |
-| `status` | enum | `active` \| `inactive` \| `onboarding` \| `offboarded` |
-| `riskLevel` | enum | `low` \| `medium` \| `high` |
-| `assessmentStatus` | enum | `completed` \| `in_progress` \| `not_started` \| `expired` |
-| `industry` | string | Exact match, case-insensitive |
-| `page` | integer | ≥ 1, default `1` |
-| `limit` | integer | 1–100, default `10` |
+| Parameter          | Type    | Notes                                                                                     |
+| ------------------ | ------- | ----------------------------------------------------------------------------------------- |
+| `search`           | string  | Case-insensitive substring match across id, name, industry, country name and country code |
+| `country`          | string  | ISO 3166-1 alpha-2, case-insensitive (`de` = `DE`)                                        |
+| `status`           | enum    | `active` \| `inactive` \| `onboarding` \| `offboarded`                                    |
+| `riskLevel`        | enum    | `low` \| `medium` \| `high`                                                               |
+| `assessmentStatus` | enum    | `completed` \| `in_progress` \| `not_started` \| `expired`                                |
+| `industry`         | string  | Exact match, case-insensitive                                                             |
+| `page`             | integer | ≥ 1, default `1`                                                                          |
+| `limit`            | integer | 1–100, default `10`                                                                       |
 
 Unknown query parameters and out-of-range values are rejected with `400`.
 
@@ -108,10 +106,10 @@ Every error — validation, auth, not-found, unexpected — has the same shape:
 
 ## Data
 
-| File | Contents |
-|---|---|
-| `src/data/suppliers.json` | Array of 50 supplier summaries — backs the list endpoint |
-| `src/data/supplier.json` | Object keyed by supplier id → full supplier detail — backs the detail endpoint |
+| File                      | Contents                                                                       |
+| ------------------------- | ------------------------------------------------------------------------------ |
+| `src/data/suppliers.json` | Array of 50 supplier summaries — backs the list endpoint                       |
+| `src/data/supplier.json`  | Object keyed by supplier id → full supplier detail — backs the detail endpoint |
 
 Both files are produced by `npm run generate:data`, which uses a **seeded PRNG**: re-running
 it reproduces the committed files byte for byte. `sup_001` is the reference record from the
@@ -126,16 +124,16 @@ in tests and in the deployed build.
 
 ## Scripts
 
-| Command | Purpose |
-|---|---|
-| `npm run start:dev` | Watch-mode development server |
-| `npm run build` | Compile to `dist/` and copy the JSON fixtures |
-| `npm run start:prod` | Run the compiled server (Render's start command) |
-| `npm test` | Unit tests (service, repository, guard) |
-| `npm run test:e2e` | HTTP-level tests over the whole app, incl. auth and OpenAPI |
-| `npm run test:cov` | Unit tests with coverage |
-| `npm run lint` | ESLint + Prettier, autofixing |
-| `npm run generate:data` | Regenerate the two JSON fixtures |
+| Command                 | Purpose                                                     |
+| ----------------------- | ----------------------------------------------------------- |
+| `npm run start:dev`     | Watch-mode development server                               |
+| `npm run build`         | Compile to `dist/` and copy the JSON fixtures               |
+| `npm run start:prod`    | Run the compiled server (Render's start command)            |
+| `npm test`              | Unit tests (service, repository, guard)                     |
+| `npm run test:e2e`      | HTTP-level tests over the whole app, incl. auth and OpenAPI |
+| `npm run test:cov`      | Unit tests with coverage                                    |
+| `npm run lint`          | ESLint + Prettier, autofixing                               |
+| `npm run generate:data` | Regenerate the two JSON fixtures                            |
 
 ---
 
@@ -143,13 +141,13 @@ in tests and in the deployed build.
 
 Validated at boot with Joi — the process refuses to start on a bad configuration.
 
-| Variable | Required | Default | Purpose |
-|---|---|---|---|
-| `SESSION_TOKEN` | **yes** | — | Expected `X-SESSION` value (min. 8 characters) |
-| `PORT` | no | `3000` | Injected by Render |
-| `NODE_ENV` | no | `development` | `development` \| `production` \| `test` |
-| `SWAGGER_ENABLED` | no | `true` | Set to `false` to hide `/api-docs` |
-| `CORS_ORIGINS` | no | `*` | Comma-separated allow-list, or `*` |
+| Variable          | Required | Default       | Purpose                                        |
+| ----------------- | -------- | ------------- | ---------------------------------------------- |
+| `SESSION_TOKEN`   | **yes**  | —             | Expected `X-SESSION` value (min. 8 characters) |
+| `PORT`            | no       | `3000`        | Injected by Render                             |
+| `NODE_ENV`        | no       | `development` | `development` \| `production` \| `test`        |
+| `SWAGGER_ENABLED` | no       | `true`        | Set to `false` to hide `/api-docs`             |
+| `CORS_ORIGINS`    | no       | `*`           | Comma-separated allow-list, or `*`             |
 
 ---
 
@@ -172,14 +170,14 @@ configuration.
 
 **Option B — manual web service:**
 
-| Setting | Value |
-|---|---|
-| Runtime | Node |
-| Root directory | *(repository root)* |
-| Build command | `npm ci && npm run build` |
-| Start command | `npm run start:prod` |
-| Health check path | `/health` |
-| Environment | `NODE_ENV=production`, `SESSION_TOKEN=<generate a secret>`, `SWAGGER_ENABLED`, `CORS_ORIGINS` |
+| Setting           | Value                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------- |
+| Runtime           | Node                                                                                          |
+| Root directory    | _(repository root)_                                                                           |
+| Build command     | `npm ci && npm run build`                                                                     |
+| Start command     | `npm run start:prod`                                                                          |
+| Health check path | `/health`                                                                                     |
+| Environment       | `NODE_ENV=production`, `SESSION_TOKEN=<generate a secret>`, `SWAGGER_ENABLED`, `CORS_ORIGINS` |
 
 Generate a token with:
 
@@ -195,12 +193,9 @@ curl -H "X-SESSION: $SESSION_TOKEN" \
   "https://<your-service>.onrender.com/api/v1/suppliers?limit=2"
 ```
 
-> **Rotating the secret** — update `SESSION_TOKEN` in the Render dashboard; the service
-> redeploys and the new value takes effect immediately.
+> **Rotating the secret** — update `SESSION_TOKEN` in the Render dashboard; the service redeploys and the new value takes effect immediately.
 >
-> **Cold starts** — `render.yaml` requests the `free` plan, which spins the instance down
-> after inactivity, so the first request afterwards is slow. Switch `plan` to `starter`
-> for an always-on PoC.
+> **Cold starts** — `render.yaml` requests the `free` plan, which spins the instance down after inactivity, so the first request afterwards is slow. Switch `plan` to `starter` for an always-on PoC.
 
 ---
 
