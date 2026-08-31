@@ -1,0 +1,3102 @@
+{
+  "sup_001": {
+    "id": "sup_001",
+    "identity": {
+      "name": "Example Supplier GmbH",
+      "legalName": "Example Supplier GmbH",
+      "identifiers": {
+        "vatNumber": "DE123456789",
+        "lei": "529900EXAMPLE123456",
+        "duns": "123456789"
+      }
+    },
+    "address": {
+      "street": "Hauptstraße 123",
+      "city": "Munich",
+      "postalCode": "80331",
+      "country": {
+        "code": "DE",
+        "name": "Germany"
+      }
+    },
+    "contact": {
+      "email": "contact@example-supplier.com",
+      "phone": "+49 89 123456",
+      "website": "https://example-supplier.com"
+    },
+    "company": {
+      "industry": "Manufacturing",
+      "employeeCount": 250,
+      "foundedYear": 1998
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 1,
+      "since": "2024-01-01",
+      "procurement": {
+        "category": "Raw Materials",
+        "annualSpend": {
+          "amount": 1250000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 82,
+      "level": "high",
+      "lastCalculatedAt": "2026-08-30T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 84,
+      "lastCompletedAt": "2026-07-12T09:30:00Z",
+      "expiresAt": "2027-07-12T00:00:00Z"
+    },
+    "documents": {
+      "total": 12,
+      "valid": 10,
+      "expiringSoon": 2,
+      "expired": 0
+    },
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  "sup_002": {
+    "id": "sup_002",
+    "identity": {
+      "name": "Vega Works Co., Ltd.",
+      "legalName": "Vega Works Co., Ltd.",
+      "identifiers": {
+        "vatNumber": "CN770578968",
+        "lei": "529902464484241535",
+        "duns": "809294343"
+      }
+    },
+    "address": {
+      "street": "Nanjing Road 57",
+      "city": "Shanghai",
+      "postalCode": "200001",
+      "country": {
+        "code": "CN",
+        "name": "China"
+      }
+    },
+    "contact": {
+      "email": "contact@vega-works.example.com",
+      "phone": "+86 21 297072",
+      "website": "https://vega-works.example.com"
+    },
+    "company": {
+      "industry": "IT Services",
+      "employeeCount": 15189,
+      "foundedYear": 1981
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 2,
+      "since": "2022-10-08",
+      "procurement": {
+        "category": "Logistics Services",
+        "annualSpend": {
+          "amount": 4273000,
+          "currency": "CNY"
+        }
+      }
+    },
+    "risk": {
+      "score": 88,
+      "level": "high",
+      "lastCalculatedAt": "2026-06-24T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 85,
+      "lastCompletedAt": "2025-09-20T14:00:00Z",
+      "expiresAt": "2026-09-20T00:00:00Z"
+    },
+    "documents": {
+      "total": 19,
+      "valid": 16,
+      "expiringSoon": 0,
+      "expired": 3
+    },
+    "createdAt": "2022-10-08T14:00:00Z",
+    "updatedAt": "2026-06-24T14:00:00Z"
+  },
+  "sup_003": {
+    "id": "sup_003",
+    "identity": {
+      "name": "Nord Technologies GmbH",
+      "legalName": "Nord Technologies GmbH",
+      "identifiers": {
+        "vatNumber": "DE858184769",
+        "lei": "529904338116474556",
+        "duns": "731910303"
+      }
+    },
+    "address": {
+      "street": "Schildergasse 51",
+      "city": "Cologne",
+      "postalCode": "50667",
+      "country": {
+        "code": "DE",
+        "name": "Germany"
+      }
+    },
+    "contact": {
+      "email": "contact@nord-technologies.example.com",
+      "phone": "+49 89 672212",
+      "website": "https://nord-technologies.example.com"
+    },
+    "company": {
+      "industry": "Automotive",
+      "employeeCount": 2456,
+      "foundedYear": 2020
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 1,
+      "since": "2020-09-27",
+      "procurement": {
+        "category": "Components",
+        "annualSpend": {
+          "amount": 6460000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 60,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-15T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 49,
+      "lastCompletedAt": "2025-04-24T14:00:00Z",
+      "expiresAt": "2026-04-24T00:00:00Z"
+    },
+    "documents": {
+      "total": 20,
+      "valid": 16,
+      "expiringSoon": 2,
+      "expired": 2
+    },
+    "createdAt": "2020-09-27T14:00:00Z",
+    "updatedAt": "2026-08-15T14:00:00Z"
+  },
+  "sup_004": {
+    "id": "sup_004",
+    "identity": {
+      "name": "Blue Logistics Pvt Ltd",
+      "legalName": "Blue Logistics Pvt Ltd",
+      "identifiers": {
+        "vatNumber": "IN008465158",
+        "lei": "529907895178744985",
+        "duns": "574132030"
+      }
+    },
+    "address": {
+      "street": "Marine Drive 223",
+      "city": "Mumbai",
+      "postalCode": "400001",
+      "country": {
+        "code": "IN",
+        "name": "India"
+      }
+    },
+    "contact": {
+      "email": "contact@blue-logistics.example.com",
+      "phone": "+91 22 582423",
+      "website": "https://blue-logistics.example.com"
+    },
+    "company": {
+      "industry": "Food & Beverage",
+      "employeeCount": 426,
+      "foundedYear": 1954
+    },
+    "relationship": {
+      "status": "inactive",
+      "tier": 1,
+      "since": "2022-08-02",
+      "procurement": {
+        "category": "Components",
+        "annualSpend": {
+          "amount": 7333000,
+          "currency": "INR"
+        }
+      }
+    },
+    "risk": {
+      "score": 66,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-25T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 36,
+      "lastCompletedAt": "2025-06-09T14:00:00Z",
+      "expiresAt": "2026-06-09T00:00:00Z"
+    },
+    "documents": {
+      "total": 5,
+      "valid": 2,
+      "expiringSoon": 0,
+      "expired": 3
+    },
+    "createdAt": "2022-08-02T14:00:00Z",
+    "updatedAt": "2026-08-25T14:00:00Z"
+  },
+  "sup_005": {
+    "id": "sup_005",
+    "identity": {
+      "name": "Solaris Logistics Ltd",
+      "legalName": "Solaris Logistics Ltd",
+      "identifiers": {
+        "vatNumber": "GB218558250",
+        "lei": "529957652362875230",
+        "duns": "787917314"
+      }
+    },
+    "address": {
+      "street": "Cheapside 169",
+      "city": "London",
+      "postalCode": "EC1A 1BB",
+      "country": {
+        "code": "GB",
+        "name": "United Kingdom"
+      }
+    },
+    "contact": {
+      "email": "contact@solaris-logistics.example.com",
+      "phone": "+44 20 207797",
+      "website": "https://solaris-logistics.example.com"
+    },
+    "company": {
+      "industry": "Metals & Mining",
+      "employeeCount": 8205,
+      "foundedYear": 2015
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 2,
+      "since": "2019-12-14",
+      "procurement": {
+        "category": "Machinery",
+        "annualSpend": {
+          "amount": 7557000,
+          "currency": "GBP"
+        }
+      }
+    },
+    "risk": {
+      "score": 58,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-30T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 9,
+      "valid": 2,
+      "expiringSoon": 4,
+      "expired": 3
+    },
+    "createdAt": "2019-12-14T14:00:00Z",
+    "updatedAt": "2026-06-30T14:00:00Z"
+  },
+  "sup_006": {
+    "id": "sup_006",
+    "identity": {
+      "name": "Helio Group Inc.",
+      "legalName": "Helio Group Inc.",
+      "identifiers": {
+        "vatNumber": "US059680457",
+        "lei": "529936247983161980",
+        "duns": "719811741"
+      }
+    },
+    "address": {
+      "street": "Michigan Avenue 212",
+      "city": "Chicago",
+      "postalCode": "60601",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@helio-group.example.com",
+      "phone": "+1 212 896844",
+      "website": "https://helio-group.example.com"
+    },
+    "company": {
+      "industry": "Metals & Mining",
+      "employeeCount": 13891,
+      "foundedYear": 2020
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 2,
+      "since": "2022-11-23",
+      "procurement": {
+        "category": "Packaging",
+        "annualSpend": {
+          "amount": 9090000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 50,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-28T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 90,
+      "lastCompletedAt": "2025-03-24T14:00:00Z",
+      "expiresAt": "2026-03-24T00:00:00Z"
+    },
+    "documents": {
+      "total": 17,
+      "valid": 12,
+      "expiringSoon": 2,
+      "expired": 3
+    },
+    "createdAt": "2022-11-23T14:00:00Z",
+    "updatedAt": "2026-06-28T14:00:00Z"
+  },
+  "sup_007": {
+    "id": "sup_007",
+    "identity": {
+      "name": "Aurora Materials S.p.A.",
+      "legalName": "Aurora Materials S.p.A.",
+      "identifiers": {
+        "vatNumber": "IT322350731",
+        "lei": "529949371454642395",
+        "duns": "424878110"
+      }
+    },
+    "address": {
+      "street": "Via Montenapoleone 186",
+      "city": "Milan",
+      "postalCode": "20121",
+      "country": {
+        "code": "IT",
+        "name": "Italy"
+      }
+    },
+    "contact": {
+      "email": "contact@aurora-materials.example.com",
+      "phone": "+39 02 271921",
+      "website": "https://aurora-materials.example.com"
+    },
+    "company": {
+      "industry": "Chemicals",
+      "employeeCount": 4399,
+      "foundedYear": 1974
+    },
+    "relationship": {
+      "status": "inactive",
+      "tier": 3,
+      "since": "2023-05-24",
+      "procurement": {
+        "category": "Logistics Services",
+        "annualSpend": {
+          "amount": 5829000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 15,
+      "level": "low",
+      "lastCalculatedAt": "2026-06-09T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 12,
+      "valid": 9,
+      "expiringSoon": 0,
+      "expired": 3
+    },
+    "createdAt": "2023-05-24T14:00:00Z",
+    "updatedAt": "2026-06-09T14:00:00Z"
+  },
+  "sup_008": {
+    "id": "sup_008",
+    "identity": {
+      "name": "Cardinal Industries B.V.",
+      "legalName": "Cardinal Industries B.V.",
+      "identifiers": {
+        "vatNumber": "NL167243833",
+        "lei": "529922302085872092",
+        "duns": "785416109"
+      }
+    },
+    "address": {
+      "street": "Damrak 32",
+      "city": "Amsterdam",
+      "postalCode": "1012",
+      "country": {
+        "code": "NL",
+        "name": "Netherlands"
+      }
+    },
+    "contact": {
+      "email": "contact@cardinal-industries.example.com",
+      "phone": "+31 20 309076",
+      "website": "https://cardinal-industries.example.com"
+    },
+    "company": {
+      "industry": "Metals & Mining",
+      "employeeCount": 14789,
+      "foundedYear": 1954
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 2,
+      "since": "2023-04-07",
+      "procurement": {
+        "category": "Chemicals",
+        "annualSpend": {
+          "amount": 4486000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 36,
+      "level": "low",
+      "lastCalculatedAt": "2026-07-23T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 75,
+      "lastCompletedAt": "2026-01-18T14:00:00Z",
+      "expiresAt": "2027-01-18T00:00:00Z"
+    },
+    "documents": {
+      "total": 9,
+      "valid": 8,
+      "expiringSoon": 1,
+      "expired": 0
+    },
+    "createdAt": "2023-04-07T14:00:00Z",
+    "updatedAt": "2026-07-23T14:00:00Z"
+  },
+  "sup_009": {
+    "id": "sup_009",
+    "identity": {
+      "name": "Blue Works Inc.",
+      "legalName": "Blue Works Inc.",
+      "identifiers": {
+        "vatNumber": "US634403614",
+        "lei": "529965792647138912",
+        "duns": "438724817"
+      }
+    },
+    "address": {
+      "street": "Michigan Avenue 90",
+      "city": "Chicago",
+      "postalCode": "60601",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@blue-works.example.com",
+      "phone": "+1 212 144886",
+      "website": "https://blue-works.example.com"
+    },
+    "company": {
+      "industry": "Textiles",
+      "employeeCount": 20004,
+      "foundedYear": 1960
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1,
+      "since": "2019-09-28",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 5808000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 17,
+      "level": "low",
+      "lastCalculatedAt": "2026-08-28T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 81,
+      "lastCompletedAt": "2024-12-19T14:00:00Z",
+      "expiresAt": "2025-12-19T00:00:00Z"
+    },
+    "documents": {
+      "total": 0,
+      "valid": 0,
+      "expiringSoon": 0,
+      "expired": 0
+    },
+    "createdAt": "2019-09-28T14:00:00Z",
+    "updatedAt": "2026-08-28T14:00:00Z"
+  },
+  "sup_010": {
+    "id": "sup_010",
+    "identity": {
+      "name": "Solaris Logistics S.L.",
+      "legalName": "Solaris Logistics S.L.",
+      "identifiers": {
+        "vatNumber": "ES537506458",
+        "lei": "529903459928365235",
+        "duns": "390860357"
+      }
+    },
+    "address": {
+      "street": "Passeig de Gràcia 119",
+      "city": "Barcelona",
+      "postalCode": "08007",
+      "country": {
+        "code": "ES",
+        "name": "Spain"
+      }
+    },
+    "contact": {
+      "email": "contact@solaris-logistics.example.com",
+      "phone": "+34 91 901167",
+      "website": "https://solaris-logistics.example.com"
+    },
+    "company": {
+      "industry": "Food & Beverage",
+      "employeeCount": 6556,
+      "foundedYear": 1954
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2024-10-02",
+      "procurement": {
+        "category": "Raw Materials",
+        "annualSpend": {
+          "amount": 6996000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 12,
+      "level": "low",
+      "lastCalculatedAt": "2026-07-19T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 92,
+      "lastCompletedAt": "2025-07-15T14:00:00Z",
+      "expiresAt": "2026-07-15T00:00:00Z"
+    },
+    "documents": {
+      "total": 12,
+      "valid": 11,
+      "expiringSoon": 0,
+      "expired": 1
+    },
+    "createdAt": "2024-10-02T14:00:00Z",
+    "updatedAt": "2026-07-19T14:00:00Z"
+  },
+  "sup_011": {
+    "id": "sup_011",
+    "identity": {
+      "name": "Alpen Chemicals GmbH",
+      "legalName": "Alpen Chemicals GmbH",
+      "identifiers": {
+        "vatNumber": "DE333907369",
+        "lei": "529920253677363397",
+        "duns": "926143814"
+      }
+    },
+    "address": {
+      "street": "Hauptstraße 69",
+      "city": "Munich",
+      "postalCode": "80331",
+      "country": {
+        "code": "DE",
+        "name": "Germany"
+      }
+    },
+    "contact": {
+      "email": "contact@alpen-chemicals.example.com",
+      "phone": "+49 89 224882",
+      "website": "https://alpen-chemicals.example.com"
+    },
+    "company": {
+      "industry": "Textiles",
+      "employeeCount": 13768,
+      "foundedYear": 2004
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3,
+      "since": "2019-10-17",
+      "procurement": {
+        "category": "Chemicals",
+        "annualSpend": {
+          "amount": 6080000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 62,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-20T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 14,
+      "valid": 12,
+      "expiringSoon": 0,
+      "expired": 2
+    },
+    "createdAt": "2019-10-17T14:00:00Z",
+    "updatedAt": "2026-08-20T14:00:00Z"
+  },
+  "sup_012": {
+    "id": "sup_012",
+    "identity": {
+      "name": "Cardinal Chemicals Pvt Ltd",
+      "legalName": "Cardinal Chemicals Pvt Ltd",
+      "identifiers": {
+        "vatNumber": "IN137021155",
+        "lei": "529990910951124141",
+        "duns": "497646603"
+      }
+    },
+    "address": {
+      "street": "Marine Drive 136",
+      "city": "Mumbai",
+      "postalCode": "400001",
+      "country": {
+        "code": "IN",
+        "name": "India"
+      }
+    },
+    "contact": {
+      "email": "contact@cardinal-chemicals.example.com",
+      "phone": "+91 22 526489",
+      "website": "https://cardinal-chemicals.example.com"
+    },
+    "company": {
+      "industry": "Electronics",
+      "employeeCount": 8226,
+      "foundedYear": 1994
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 2,
+      "since": "2023-01-13",
+      "procurement": {
+        "category": "Chemicals",
+        "annualSpend": {
+          "amount": 8496000,
+          "currency": "INR"
+        }
+      }
+    },
+    "risk": {
+      "score": 62,
+      "level": "medium",
+      "lastCalculatedAt": "2026-05-06T14:00:00Z"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 15,
+      "valid": 13,
+      "expiringSoon": 2,
+      "expired": 0
+    },
+    "createdAt": "2023-01-13T14:00:00Z",
+    "updatedAt": "2026-05-06T14:00:00Z"
+  },
+  "sup_013": {
+    "id": "sup_013",
+    "identity": {
+      "name": "Terra Packaging S.L.",
+      "legalName": "Terra Packaging S.L.",
+      "identifiers": {
+        "vatNumber": "ES090881120",
+        "lei": "529919505872375384",
+        "duns": "349068252"
+      }
+    },
+    "address": {
+      "street": "Gran Vía 106",
+      "city": "Madrid",
+      "postalCode": "28013",
+      "country": {
+        "code": "ES",
+        "name": "Spain"
+      }
+    },
+    "contact": {
+      "email": "contact@terra-packaging.example.com",
+      "phone": "+34 91 710660",
+      "website": "https://terra-packaging.example.com"
+    },
+    "company": {
+      "industry": "Chemicals",
+      "employeeCount": 15206,
+      "foundedYear": 1946
+    },
+    "relationship": {
+      "status": "inactive",
+      "tier": 3,
+      "since": "2020-06-02",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 4005000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 77,
+      "level": "high",
+      "lastCalculatedAt": "2026-05-18T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 11,
+      "valid": 5,
+      "expiringSoon": 3,
+      "expired": 3
+    },
+    "createdAt": "2020-06-02T14:00:00Z",
+    "updatedAt": "2026-05-18T14:00:00Z"
+  },
+  "sup_014": {
+    "id": "sup_014",
+    "identity": {
+      "name": "Falcon Works B.V.",
+      "legalName": "Falcon Works B.V.",
+      "identifiers": {
+        "vatNumber": "NL523764402",
+        "lei": "529913565805595605",
+        "duns": "756171884"
+      }
+    },
+    "address": {
+      "street": "Coolsingel 44",
+      "city": "Rotterdam",
+      "postalCode": "3011",
+      "country": {
+        "code": "NL",
+        "name": "Netherlands"
+      }
+    },
+    "contact": {
+      "email": "contact@falcon-works.example.com",
+      "phone": "+31 20 065825",
+      "website": "https://falcon-works.example.com"
+    },
+    "company": {
+      "industry": "Agriculture",
+      "employeeCount": 15638,
+      "foundedYear": 1953
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1,
+      "since": "2019-11-29",
+      "procurement": {
+        "category": "Consumables",
+        "annualSpend": {
+          "amount": 5645000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 65,
+      "level": "medium",
+      "lastCalculatedAt": "2026-05-25T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 48,
+      "lastCompletedAt": "2025-10-28T14:00:00Z",
+      "expiresAt": "2026-10-28T00:00:00Z"
+    },
+    "documents": {
+      "total": 17,
+      "valid": 13,
+      "expiringSoon": 3,
+      "expired": 1
+    },
+    "createdAt": "2019-11-29T14:00:00Z",
+    "updatedAt": "2026-05-25T14:00:00Z"
+  },
+  "sup_015": {
+    "id": "sup_015",
+    "identity": {
+      "name": "Cypress Logistics S.L.",
+      "legalName": "Cypress Logistics S.L.",
+      "identifiers": {
+        "vatNumber": "ES667908489",
+        "lei": "529992916933544637",
+        "duns": "945188514"
+      }
+    },
+    "address": {
+      "street": "Gran Vía 61",
+      "city": "Madrid",
+      "postalCode": "28013",
+      "country": {
+        "code": "ES",
+        "name": "Spain"
+      }
+    },
+    "contact": {
+      "email": "contact@cypress-logistics.example.com",
+      "phone": "+34 91 699065",
+      "website": "https://cypress-logistics.example.com"
+    },
+    "company": {
+      "industry": "Agriculture",
+      "employeeCount": 21801,
+      "foundedYear": 1978
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1,
+      "since": "2020-07-16",
+      "procurement": {
+        "category": "Consumables",
+        "annualSpend": {
+          "amount": 6800000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 64,
+      "level": "medium",
+      "lastCalculatedAt": "2026-05-08T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 38,
+      "lastCompletedAt": "2025-04-20T14:00:00Z",
+      "expiresAt": "2026-04-20T00:00:00Z"
+    },
+    "documents": {
+      "total": 15,
+      "valid": 9,
+      "expiringSoon": 4,
+      "expired": 2
+    },
+    "createdAt": "2020-07-16T14:00:00Z",
+    "updatedAt": "2026-05-08T14:00:00Z"
+  },
+  "sup_016": {
+    "id": "sup_016",
+    "identity": {
+      "name": "Cardinal Works A.Ş.",
+      "legalName": "Cardinal Works A.Ş.",
+      "identifiers": {
+        "vatNumber": "TR351614127",
+        "lei": "529916746628632065",
+        "duns": "409490374"
+      }
+    },
+    "address": {
+      "street": "İstiklal Caddesi 2",
+      "city": "Istanbul",
+      "postalCode": "34000",
+      "country": {
+        "code": "TR",
+        "name": "Türkiye"
+      }
+    },
+    "contact": {
+      "email": "contact@cardinal-works.example.com",
+      "phone": "+90 212 699935",
+      "website": "https://cardinal-works.example.com"
+    },
+    "company": {
+      "industry": "Food & Beverage",
+      "employeeCount": 14652,
+      "foundedYear": 1954
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3,
+      "since": "2023-03-20",
+      "procurement": {
+        "category": "Facility Management",
+        "annualSpend": {
+          "amount": 1695000,
+          "currency": "TRY"
+        }
+      }
+    },
+    "risk": {
+      "score": 66,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-10T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 68,
+      "lastCompletedAt": "2024-11-24T14:00:00Z",
+      "expiresAt": "2025-11-24T00:00:00Z"
+    },
+    "documents": {
+      "total": 24,
+      "valid": 19,
+      "expiringSoon": 2,
+      "expired": 3
+    },
+    "createdAt": "2023-03-20T14:00:00Z",
+    "updatedAt": "2026-08-10T14:00:00Z"
+  },
+  "sup_017": {
+    "id": "sup_017",
+    "identity": {
+      "name": "Cardinal Foods Sp. z o.o.",
+      "legalName": "Cardinal Foods Sp. z o.o.",
+      "identifiers": {
+        "vatNumber": "PL326840053",
+        "lei": "529946104073320834",
+        "duns": "820915771"
+      }
+    },
+    "address": {
+      "street": "Floriańska 141",
+      "city": "Kraków",
+      "postalCode": "31-008",
+      "country": {
+        "code": "PL",
+        "name": "Poland"
+      }
+    },
+    "contact": {
+      "email": "contact@cardinal-foods.example.com",
+      "phone": "+48 22 079636",
+      "website": "https://cardinal-foods.example.com"
+    },
+    "company": {
+      "industry": "Electronics",
+      "employeeCount": 16633,
+      "foundedYear": 2015
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 2,
+      "since": "2024-03-01",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 5727000,
+          "currency": "PLN"
+        }
+      }
+    },
+    "risk": {
+      "score": 77,
+      "level": "high",
+      "lastCalculatedAt": "2026-06-25T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 11,
+      "valid": 10,
+      "expiringSoon": 1,
+      "expired": 0
+    },
+    "createdAt": "2024-03-01T14:00:00Z",
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  "sup_018": {
+    "id": "sup_018",
+    "identity": {
+      "name": "Silva Partners AB",
+      "legalName": "Silva Partners AB",
+      "identifiers": {
+        "vatNumber": "SE790199764",
+        "lei": "529999694711421017",
+        "duns": "188837903"
+      }
+    },
+    "address": {
+      "street": "Avenyn 20",
+      "city": "Gothenburg",
+      "postalCode": "411 03",
+      "country": {
+        "code": "SE",
+        "name": "Sweden"
+      }
+    },
+    "contact": {
+      "email": "contact@silva-partners.example.com",
+      "phone": "+46 8 286806",
+      "website": "https://silva-partners.example.com"
+    },
+    "company": {
+      "industry": "Manufacturing",
+      "employeeCount": 4300,
+      "foundedYear": 1997
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2020-12-05",
+      "procurement": {
+        "category": "Facility Management",
+        "annualSpend": {
+          "amount": 2882000,
+          "currency": "SEK"
+        }
+      }
+    },
+    "risk": {
+      "score": 42,
+      "level": "low",
+      "lastCalculatedAt": "2026-05-19T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 45,
+      "lastCompletedAt": "2026-01-03T14:00:00Z",
+      "expiresAt": "2027-01-03T00:00:00Z"
+    },
+    "documents": {
+      "total": 2,
+      "valid": 1,
+      "expiringSoon": 0,
+      "expired": 1
+    },
+    "createdAt": "2020-12-05T14:00:00Z",
+    "updatedAt": "2026-05-19T14:00:00Z"
+  },
+  "sup_019": {
+    "id": "sup_019",
+    "identity": {
+      "name": "Meridian Technologies B.V.",
+      "legalName": "Meridian Technologies B.V.",
+      "identifiers": {
+        "vatNumber": "NL820262868",
+        "lei": "529956847914225151",
+        "duns": "991598207"
+      }
+    },
+    "address": {
+      "street": "Damrak 41",
+      "city": "Amsterdam",
+      "postalCode": "1012",
+      "country": {
+        "code": "NL",
+        "name": "Netherlands"
+      }
+    },
+    "contact": {
+      "email": "contact@meridian-technologies.example.com",
+      "phone": "+31 20 784143",
+      "website": "https://meridian-technologies.example.com"
+    },
+    "company": {
+      "industry": "Electronics",
+      "employeeCount": 814,
+      "foundedYear": 1948
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2022-12-28",
+      "procurement": {
+        "category": "Packaging",
+        "annualSpend": {
+          "amount": 2103000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 66,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-29T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 8,
+      "valid": 2,
+      "expiringSoon": 4,
+      "expired": 2
+    },
+    "createdAt": "2022-12-28T14:00:00Z",
+    "updatedAt": "2026-08-29T14:00:00Z"
+  },
+  "sup_020": {
+    "id": "sup_020",
+    "identity": {
+      "name": "Granite Metals Pvt Ltd",
+      "legalName": "Granite Metals Pvt Ltd",
+      "identifiers": {
+        "vatNumber": "IN904324701",
+        "lei": "529920298016417654",
+        "duns": "816092500"
+      }
+    },
+    "address": {
+      "street": "Marine Drive 48",
+      "city": "Mumbai",
+      "postalCode": "400001",
+      "country": {
+        "code": "IN",
+        "name": "India"
+      }
+    },
+    "contact": {
+      "email": "contact@granite-metals.example.com",
+      "phone": "+91 22 168337",
+      "website": "https://granite-metals.example.com"
+    },
+    "company": {
+      "industry": "IT Services",
+      "employeeCount": 18715,
+      "foundedYear": 1988
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2020-04-01",
+      "procurement": {
+        "category": "Machinery",
+        "annualSpend": {
+          "amount": 8031000,
+          "currency": "INR"
+        }
+      }
+    },
+    "risk": {
+      "score": 48,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-25T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 80,
+      "lastCompletedAt": "2026-02-09T14:00:00Z",
+      "expiresAt": "2027-02-09T00:00:00Z"
+    },
+    "documents": {
+      "total": 21,
+      "valid": 20,
+      "expiringSoon": 0,
+      "expired": 1
+    },
+    "createdAt": "2020-04-01T14:00:00Z",
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  "sup_021": {
+    "id": "sup_021",
+    "identity": {
+      "name": "Nord Components Inc.",
+      "legalName": "Nord Components Inc.",
+      "identifiers": {
+        "vatNumber": "US911848804",
+        "lei": "529964099402288571",
+        "duns": "317215158"
+      }
+    },
+    "address": {
+      "street": "Broadway 9",
+      "city": "New York",
+      "postalCode": "10001",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@nord-components.example.com",
+      "phone": "+1 212 485392",
+      "website": "https://nord-components.example.com"
+    },
+    "company": {
+      "industry": "Food & Beverage",
+      "employeeCount": 7710,
+      "foundedYear": 1997
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 2,
+      "since": "2021-08-03",
+      "procurement": {
+        "category": "Consumables",
+        "annualSpend": {
+          "amount": 6277000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 19,
+      "level": "low",
+      "lastCalculatedAt": "2026-08-30T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 62,
+      "lastCompletedAt": "2025-01-22T14:00:00Z",
+      "expiresAt": "2026-01-22T00:00:00Z"
+    },
+    "documents": {
+      "total": 0,
+      "valid": 0,
+      "expiringSoon": 0,
+      "expired": 0
+    },
+    "createdAt": "2021-08-03T14:00:00Z",
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  "sup_022": {
+    "id": "sup_022",
+    "identity": {
+      "name": "Blue Foods SAS",
+      "legalName": "Blue Foods SAS",
+      "identifiers": {
+        "vatNumber": "FR422713196",
+        "lei": "529969960856399724",
+        "duns": "401707594"
+      }
+    },
+    "address": {
+      "street": "Rue de Rivoli 120",
+      "city": "Paris",
+      "postalCode": "75001",
+      "country": {
+        "code": "FR",
+        "name": "France"
+      }
+    },
+    "contact": {
+      "email": "contact@blue-foods.example.com",
+      "phone": "+33 1 314974",
+      "website": "https://blue-foods.example.com"
+    },
+    "company": {
+      "industry": "Metals & Mining",
+      "employeeCount": 11474,
+      "foundedYear": 1981
+    },
+    "relationship": {
+      "status": "inactive",
+      "tier": 2,
+      "since": "2025-04-10",
+      "procurement": {
+        "category": "Raw Materials",
+        "annualSpend": {
+          "amount": 8588000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 59,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-25T14:00:00Z"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 3,
+      "valid": 0,
+      "expiringSoon": 0,
+      "expired": 3
+    },
+    "createdAt": "2025-04-10T14:00:00Z",
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  "sup_023": {
+    "id": "sup_023",
+    "identity": {
+      "name": "Baltic Chemicals SAS",
+      "legalName": "Baltic Chemicals SAS",
+      "identifiers": {
+        "vatNumber": "FR698760305",
+        "lei": "529930226282012421",
+        "duns": "712430960"
+      }
+    },
+    "address": {
+      "street": "Rue de la République 195",
+      "city": "Lyon",
+      "postalCode": "69002",
+      "country": {
+        "code": "FR",
+        "name": "France"
+      }
+    },
+    "contact": {
+      "email": "contact@baltic-chemicals.example.com",
+      "phone": "+33 1 023546",
+      "website": "https://baltic-chemicals.example.com"
+    },
+    "company": {
+      "industry": "Logistics",
+      "employeeCount": 18164,
+      "foundedYear": 1956
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2021-07-20",
+      "procurement": {
+        "category": "Facility Management",
+        "annualSpend": {
+          "amount": 4146000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 39,
+      "level": "low",
+      "lastCalculatedAt": "2026-06-25T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 39,
+      "lastCompletedAt": "2025-09-12T14:00:00Z",
+      "expiresAt": "2026-09-12T00:00:00Z"
+    },
+    "documents": {
+      "total": 12,
+      "valid": 9,
+      "expiringSoon": 3,
+      "expired": 0
+    },
+    "createdAt": "2021-07-20T14:00:00Z",
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  "sup_024": {
+    "id": "sup_024",
+    "identity": {
+      "name": "Falcon Chemicals B.V.",
+      "legalName": "Falcon Chemicals B.V.",
+      "identifiers": {
+        "vatNumber": "NL144940644",
+        "lei": "529973617681401490",
+        "duns": "221471023"
+      }
+    },
+    "address": {
+      "street": "Coolsingel 237",
+      "city": "Rotterdam",
+      "postalCode": "3011",
+      "country": {
+        "code": "NL",
+        "name": "Netherlands"
+      }
+    },
+    "contact": {
+      "email": "contact@falcon-chemicals.example.com",
+      "phone": "+31 20 603757",
+      "website": "https://falcon-chemicals.example.com"
+    },
+    "company": {
+      "industry": "IT Services",
+      "employeeCount": 22129,
+      "foundedYear": 2021
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1,
+      "since": "2021-06-27",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 2500000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 35,
+      "level": "low",
+      "lastCalculatedAt": "2026-05-27T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 68,
+      "lastCompletedAt": "2025-06-30T14:00:00Z",
+      "expiresAt": "2026-06-30T00:00:00Z"
+    },
+    "documents": {
+      "total": 10,
+      "valid": 6,
+      "expiringSoon": 3,
+      "expired": 1
+    },
+    "createdAt": "2021-06-27T14:00:00Z",
+    "updatedAt": "2026-05-27T14:00:00Z"
+  },
+  "sup_025": {
+    "id": "sup_025",
+    "identity": {
+      "name": "Kappa Logistics s.r.o.",
+      "legalName": "Kappa Logistics s.r.o.",
+      "identifiers": {
+        "vatNumber": "CZ072299464",
+        "lei": "529994299050781012",
+        "duns": "580882039"
+      }
+    },
+    "address": {
+      "street": "Václavské náměstí 164",
+      "city": "Prague",
+      "postalCode": "110 00",
+      "country": {
+        "code": "CZ",
+        "name": "Czechia"
+      }
+    },
+    "contact": {
+      "email": "contact@kappa-logistics.example.com",
+      "phone": "+420 2 527997",
+      "website": "https://kappa-logistics.example.com"
+    },
+    "company": {
+      "industry": "Manufacturing",
+      "employeeCount": 20415,
+      "foundedYear": 1956
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2020-02-13",
+      "procurement": {
+        "category": "Raw Materials",
+        "annualSpend": {
+          "amount": 5423000,
+          "currency": "CZK"
+        }
+      }
+    },
+    "risk": {
+      "score": 31,
+      "level": "low",
+      "lastCalculatedAt": "2026-08-18T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 16,
+      "valid": 15,
+      "expiringSoon": 1,
+      "expired": 0
+    },
+    "createdAt": "2020-02-13T14:00:00Z",
+    "updatedAt": "2026-08-18T14:00:00Z"
+  },
+  "sup_026": {
+    "id": "sup_026",
+    "identity": {
+      "name": "Meridian Systems AB",
+      "legalName": "Meridian Systems AB",
+      "identifiers": {
+        "vatNumber": "SE029784611",
+        "lei": "529996063068837667",
+        "duns": "892459695"
+      }
+    },
+    "address": {
+      "street": "Drottninggatan 231",
+      "city": "Stockholm",
+      "postalCode": "111 20",
+      "country": {
+        "code": "SE",
+        "name": "Sweden"
+      }
+    },
+    "contact": {
+      "email": "contact@meridian-systems.example.com",
+      "phone": "+46 8 767268",
+      "website": "https://meridian-systems.example.com"
+    },
+    "company": {
+      "industry": "Agriculture",
+      "employeeCount": 5753,
+      "foundedYear": 2012
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1,
+      "since": "2021-02-26",
+      "procurement": {
+        "category": "Packaging",
+        "annualSpend": {
+          "amount": 309000,
+          "currency": "SEK"
+        }
+      }
+    },
+    "risk": {
+      "score": 69,
+      "level": "medium",
+      "lastCalculatedAt": "2026-05-16T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 15,
+      "valid": 13,
+      "expiringSoon": 2,
+      "expired": 0
+    },
+    "createdAt": "2021-02-26T14:00:00Z",
+    "updatedAt": "2026-05-16T14:00:00Z"
+  },
+  "sup_027": {
+    "id": "sup_027",
+    "identity": {
+      "name": "Everest Partners Inc.",
+      "legalName": "Everest Partners Inc.",
+      "identifiers": {
+        "vatNumber": "US253988319",
+        "lei": "529976738313794991",
+        "duns": "768797487"
+      }
+    },
+    "address": {
+      "street": "Michigan Avenue 236",
+      "city": "Chicago",
+      "postalCode": "60601",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@everest-partners.example.com",
+      "phone": "+1 212 575423",
+      "website": "https://everest-partners.example.com"
+    },
+    "company": {
+      "industry": "Chemicals",
+      "employeeCount": 19694,
+      "foundedYear": 1973
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1,
+      "since": "2024-03-30",
+      "procurement": {
+        "category": "Logistics Services",
+        "annualSpend": {
+          "amount": 7756000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 16,
+      "level": "low",
+      "lastCalculatedAt": "2026-05-15T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 84,
+      "lastCompletedAt": "2026-01-21T14:00:00Z",
+      "expiresAt": "2027-01-21T00:00:00Z"
+    },
+    "documents": {
+      "total": 1,
+      "valid": 0,
+      "expiringSoon": 0,
+      "expired": 1
+    },
+    "createdAt": "2024-03-30T14:00:00Z",
+    "updatedAt": "2026-05-15T14:00:00Z"
+  },
+  "sup_028": {
+    "id": "sup_028",
+    "identity": {
+      "name": "Alpen Industries Sp. z o.o.",
+      "legalName": "Alpen Industries Sp. z o.o.",
+      "identifiers": {
+        "vatNumber": "PL817917651",
+        "lei": "529903146023099554",
+        "duns": "910838550"
+      }
+    },
+    "address": {
+      "street": "Marszałkowska 190",
+      "city": "Warsaw",
+      "postalCode": "00-001",
+      "country": {
+        "code": "PL",
+        "name": "Poland"
+      }
+    },
+    "contact": {
+      "email": "contact@alpen-industries.example.com",
+      "phone": "+48 22 358314",
+      "website": "https://alpen-industries.example.com"
+    },
+    "company": {
+      "industry": "Pharmaceuticals",
+      "employeeCount": 4322,
+      "foundedYear": 1953
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3,
+      "since": "2022-01-16",
+      "procurement": {
+        "category": "Raw Materials",
+        "annualSpend": {
+          "amount": 2263000,
+          "currency": "PLN"
+        }
+      }
+    },
+    "risk": {
+      "score": 78,
+      "level": "high",
+      "lastCalculatedAt": "2026-07-16T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 88,
+      "lastCompletedAt": "2026-05-06T14:00:00Z",
+      "expiresAt": "2027-05-06T00:00:00Z"
+    },
+    "documents": {
+      "total": 15,
+      "valid": 9,
+      "expiringSoon": 4,
+      "expired": 2
+    },
+    "createdAt": "2022-01-16T14:00:00Z",
+    "updatedAt": "2026-07-16T14:00:00Z"
+  },
+  "sup_029": {
+    "id": "sup_029",
+    "identity": {
+      "name": "Cardinal Solutions Co., Ltd.",
+      "legalName": "Cardinal Solutions Co., Ltd.",
+      "identifiers": {
+        "vatNumber": "CN988371134",
+        "lei": "529969346960603653",
+        "duns": "119285575"
+      }
+    },
+    "address": {
+      "street": "Nanjing Road 102",
+      "city": "Shanghai",
+      "postalCode": "200001",
+      "country": {
+        "code": "CN",
+        "name": "China"
+      }
+    },
+    "contact": {
+      "email": "contact@cardinal-solutions.example.com",
+      "phone": "+86 21 903692",
+      "website": "https://cardinal-solutions.example.com"
+    },
+    "company": {
+      "industry": "Electronics",
+      "employeeCount": 9237,
+      "foundedYear": 2015
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 1,
+      "since": "2024-01-31",
+      "procurement": {
+        "category": "IT Services",
+        "annualSpend": {
+          "amount": 1819000,
+          "currency": "CNY"
+        }
+      }
+    },
+    "risk": {
+      "score": 33,
+      "level": "low",
+      "lastCalculatedAt": "2026-07-02T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 60,
+      "lastCompletedAt": "2026-03-24T14:00:00Z",
+      "expiresAt": "2027-03-24T00:00:00Z"
+    },
+    "documents": {
+      "total": 7,
+      "valid": 5,
+      "expiringSoon": 2,
+      "expired": 0
+    },
+    "createdAt": "2024-01-31T14:00:00Z",
+    "updatedAt": "2026-07-02T14:00:00Z"
+  },
+  "sup_030": {
+    "id": "sup_030",
+    "identity": {
+      "name": "Cardinal Industries Ltd",
+      "legalName": "Cardinal Industries Ltd",
+      "identifiers": {
+        "vatNumber": "GB863314826",
+        "lei": "529957014450304790",
+        "duns": "587370154"
+      }
+    },
+    "address": {
+      "street": "Cheapside 136",
+      "city": "London",
+      "postalCode": "EC1A 1BB",
+      "country": {
+        "code": "GB",
+        "name": "United Kingdom"
+      }
+    },
+    "contact": {
+      "email": "contact@cardinal-industries.example.com",
+      "phone": "+44 20 807037",
+      "website": "https://cardinal-industries.example.com"
+    },
+    "company": {
+      "industry": "Manufacturing",
+      "employeeCount": 22762,
+      "foundedYear": 1960
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3,
+      "since": "2020-04-21",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 7418000,
+          "currency": "GBP"
+        }
+      }
+    },
+    "risk": {
+      "score": 63,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-05T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 46,
+      "lastCompletedAt": "2025-09-16T14:00:00Z",
+      "expiresAt": "2026-09-16T00:00:00Z"
+    },
+    "documents": {
+      "total": 6,
+      "valid": 3,
+      "expiringSoon": 3,
+      "expired": 0
+    },
+    "createdAt": "2020-04-21T14:00:00Z",
+    "updatedAt": "2026-08-05T14:00:00Z"
+  },
+  "sup_031": {
+    "id": "sup_031",
+    "identity": {
+      "name": "Meridian Solutions Inc.",
+      "legalName": "Meridian Solutions Inc.",
+      "identifiers": {
+        "vatNumber": "US855857507",
+        "lei": "529994648194381870",
+        "duns": "114052393"
+      }
+    },
+    "address": {
+      "street": "Broadway 216",
+      "city": "New York",
+      "postalCode": "10001",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@meridian-solutions.example.com",
+      "phone": "+1 212 337416",
+      "website": "https://meridian-solutions.example.com"
+    },
+    "company": {
+      "industry": "Metals & Mining",
+      "employeeCount": 20915,
+      "foundedYear": 1959
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1,
+      "since": "2025-05-30",
+      "procurement": {
+        "category": "Components",
+        "annualSpend": {
+          "amount": 8004000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 72,
+      "level": "medium",
+      "lastCalculatedAt": "2026-05-17T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 40,
+      "lastCompletedAt": "2026-07-15T14:00:00Z",
+      "expiresAt": "2027-07-15T00:00:00Z"
+    },
+    "documents": {
+      "total": 14,
+      "valid": 11,
+      "expiringSoon": 0,
+      "expired": 3
+    },
+    "createdAt": "2025-05-30T14:00:00Z",
+    "updatedAt": "2026-05-17T14:00:00Z"
+  },
+  "sup_032": {
+    "id": "sup_032",
+    "identity": {
+      "name": "Cardinal Supply Inc.",
+      "legalName": "Cardinal Supply Inc.",
+      "identifiers": {
+        "vatNumber": "US389746229",
+        "lei": "529901486471604069",
+        "duns": "375843400"
+      }
+    },
+    "address": {
+      "street": "Broadway 50",
+      "city": "New York",
+      "postalCode": "10001",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@cardinal-supply.example.com",
+      "phone": "+1 212 550972",
+      "website": "https://cardinal-supply.example.com"
+    },
+    "company": {
+      "industry": "Energy",
+      "employeeCount": 5875,
+      "foundedYear": 2013
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2022-11-06",
+      "procurement": {
+        "category": "Raw Materials",
+        "annualSpend": {
+          "amount": 6445000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 60,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-27T14:00:00Z"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 6,
+      "valid": 4,
+      "expiringSoon": 2,
+      "expired": 0
+    },
+    "createdAt": "2022-11-06T14:00:00Z",
+    "updatedAt": "2026-06-27T14:00:00Z"
+  },
+  "sup_033": {
+    "id": "sup_033",
+    "identity": {
+      "name": "Orbis Components B.V.",
+      "legalName": "Orbis Components B.V.",
+      "identifiers": {
+        "vatNumber": "NL465131817",
+        "lei": "529963725852511156",
+        "duns": "459284613"
+      }
+    },
+    "address": {
+      "street": "Damrak 110",
+      "city": "Amsterdam",
+      "postalCode": "1012",
+      "country": {
+        "code": "NL",
+        "name": "Netherlands"
+      }
+    },
+    "contact": {
+      "email": "contact@orbis-components.example.com",
+      "phone": "+31 20 281206",
+      "website": "https://orbis-components.example.com"
+    },
+    "company": {
+      "industry": "Energy",
+      "employeeCount": 23203,
+      "foundedYear": 1954
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3,
+      "since": "2020-01-22",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 7003000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 31,
+      "level": "low",
+      "lastCalculatedAt": "2026-06-29T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 48,
+      "lastCompletedAt": "2025-10-06T14:00:00Z",
+      "expiresAt": "2026-10-06T00:00:00Z"
+    },
+    "documents": {
+      "total": 4,
+      "valid": 0,
+      "expiringSoon": 1,
+      "expired": 3
+    },
+    "createdAt": "2020-01-22T14:00:00Z",
+    "updatedAt": "2026-06-29T14:00:00Z"
+  },
+  "sup_034": {
+    "id": "sup_034",
+    "identity": {
+      "name": "Iron Logistics Inc.",
+      "legalName": "Iron Logistics Inc.",
+      "identifiers": {
+        "vatNumber": "US471163788",
+        "lei": "529925190280976147",
+        "duns": "496935012"
+      }
+    },
+    "address": {
+      "street": "Michigan Avenue 172",
+      "city": "Chicago",
+      "postalCode": "60601",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@iron-logistics.example.com",
+      "phone": "+1 212 517732",
+      "website": "https://iron-logistics.example.com"
+    },
+    "company": {
+      "industry": "Automotive",
+      "employeeCount": 22941,
+      "foundedYear": 2017
+    },
+    "relationship": {
+      "status": "inactive",
+      "tier": 1,
+      "since": "2021-08-16",
+      "procurement": {
+        "category": "IT Services",
+        "annualSpend": {
+          "amount": 152000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 69,
+      "level": "medium",
+      "lastCalculatedAt": "2026-07-31T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 67,
+      "lastCompletedAt": "2025-05-14T14:00:00Z",
+      "expiresAt": "2026-05-14T00:00:00Z"
+    },
+    "documents": {
+      "total": 23,
+      "valid": 20,
+      "expiringSoon": 0,
+      "expired": 3
+    },
+    "createdAt": "2021-08-16T14:00:00Z",
+    "updatedAt": "2026-07-31T14:00:00Z"
+  },
+  "sup_035": {
+    "id": "sup_035",
+    "identity": {
+      "name": "Lumen Systems SAS",
+      "legalName": "Lumen Systems SAS",
+      "identifiers": {
+        "vatNumber": "FR299920234",
+        "lei": "529971939128150531",
+        "duns": "385810314"
+      }
+    },
+    "address": {
+      "street": "Rue de Rivoli 66",
+      "city": "Paris",
+      "postalCode": "75001",
+      "country": {
+        "code": "FR",
+        "name": "France"
+      }
+    },
+    "contact": {
+      "email": "contact@lumen-systems.example.com",
+      "phone": "+33 1 129272",
+      "website": "https://lumen-systems.example.com"
+    },
+    "company": {
+      "industry": "Electronics",
+      "employeeCount": 9684,
+      "foundedYear": 2005
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3,
+      "since": "2021-12-12",
+      "procurement": {
+        "category": "Chemicals",
+        "annualSpend": {
+          "amount": 8962000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 60,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-23T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 98,
+      "lastCompletedAt": "2025-09-11T14:00:00Z",
+      "expiresAt": "2026-09-11T00:00:00Z"
+    },
+    "documents": {
+      "total": 9,
+      "valid": 6,
+      "expiringSoon": 0,
+      "expired": 3
+    },
+    "createdAt": "2021-12-12T14:00:00Z",
+    "updatedAt": "2026-06-23T14:00:00Z"
+  },
+  "sup_036": {
+    "id": "sup_036",
+    "identity": {
+      "name": "Cypress Systems S.p.A.",
+      "legalName": "Cypress Systems S.p.A.",
+      "identifiers": {
+        "vatNumber": "IT530170229",
+        "lei": "529911181697721753",
+        "duns": "159346267"
+      }
+    },
+    "address": {
+      "street": "Via Montenapoleone 47",
+      "city": "Milan",
+      "postalCode": "20121",
+      "country": {
+        "code": "IT",
+        "name": "Italy"
+      }
+    },
+    "contact": {
+      "email": "contact@cypress-systems.example.com",
+      "phone": "+39 02 514286",
+      "website": "https://cypress-systems.example.com"
+    },
+    "company": {
+      "industry": "Logistics",
+      "employeeCount": 18148,
+      "foundedYear": 2011
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 1,
+      "since": "2025-04-05",
+      "procurement": {
+        "category": "Chemicals",
+        "annualSpend": {
+          "amount": 3145000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 80,
+      "level": "high",
+      "lastCalculatedAt": "2026-06-15T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 40,
+      "lastCompletedAt": "2024-12-17T14:00:00Z",
+      "expiresAt": "2025-12-17T00:00:00Z"
+    },
+    "documents": {
+      "total": 13,
+      "valid": 7,
+      "expiringSoon": 3,
+      "expired": 3
+    },
+    "createdAt": "2025-04-05T14:00:00Z",
+    "updatedAt": "2026-06-15T14:00:00Z"
+  },
+  "sup_037": {
+    "id": "sup_037",
+    "identity": {
+      "name": "Everest Logistics Ltd",
+      "legalName": "Everest Logistics Ltd",
+      "identifiers": {
+        "vatNumber": "GB299787768",
+        "lei": "529950561692864068",
+        "duns": "041034495"
+      }
+    },
+    "address": {
+      "street": "Deansgate 224",
+      "city": "Manchester",
+      "postalCode": "M1 1AE",
+      "country": {
+        "code": "GB",
+        "name": "United Kingdom"
+      }
+    },
+    "contact": {
+      "email": "contact@everest-logistics.example.com",
+      "phone": "+44 20 705129",
+      "website": "https://everest-logistics.example.com"
+    },
+    "company": {
+      "industry": "Textiles",
+      "employeeCount": 23296,
+      "foundedYear": 1958
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 2,
+      "since": "2024-08-22",
+      "procurement": {
+        "category": "Components",
+        "annualSpend": {
+          "amount": 2509000,
+          "currency": "GBP"
+        }
+      }
+    },
+    "risk": {
+      "score": 47,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-30T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 80,
+      "lastCompletedAt": "2024-10-16T14:00:00Z",
+      "expiresAt": "2025-10-16T00:00:00Z"
+    },
+    "documents": {
+      "total": 22,
+      "valid": 17,
+      "expiringSoon": 4,
+      "expired": 1
+    },
+    "createdAt": "2024-08-22T14:00:00Z",
+    "updatedAt": "2026-06-30T14:00:00Z"
+  },
+  "sup_038": {
+    "id": "sup_038",
+    "identity": {
+      "name": "Nord Solutions B.V.",
+      "legalName": "Nord Solutions B.V.",
+      "identifiers": {
+        "vatNumber": "NL524485190",
+        "lei": "529922264480217054",
+        "duns": "011106309"
+      }
+    },
+    "address": {
+      "street": "Damrak 178",
+      "city": "Amsterdam",
+      "postalCode": "1012",
+      "country": {
+        "code": "NL",
+        "name": "Netherlands"
+      }
+    },
+    "contact": {
+      "email": "contact@nord-solutions.example.com",
+      "phone": "+31 20 842943",
+      "website": "https://nord-solutions.example.com"
+    },
+    "company": {
+      "industry": "Logistics",
+      "employeeCount": 11638,
+      "foundedYear": 1959
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 2,
+      "since": "2019-11-25",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 7902000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 58,
+      "level": "medium",
+      "lastCalculatedAt": "2026-07-17T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 82,
+      "lastCompletedAt": "2025-06-20T14:00:00Z",
+      "expiresAt": "2026-06-20T00:00:00Z"
+    },
+    "documents": {
+      "total": 17,
+      "valid": 13,
+      "expiringSoon": 3,
+      "expired": 1
+    },
+    "createdAt": "2019-11-25T14:00:00Z",
+    "updatedAt": "2026-07-17T14:00:00Z"
+  },
+  "sup_039": {
+    "id": "sup_039",
+    "identity": {
+      "name": "Blue Partners K.K.",
+      "legalName": "Blue Partners K.K.",
+      "identifiers": {
+        "vatNumber": "JP159066872",
+        "lei": "529985997252899617",
+        "duns": "535031985"
+      }
+    },
+    "address": {
+      "street": "Chiyoda 109",
+      "city": "Tokyo",
+      "postalCode": "100-0001",
+      "country": {
+        "code": "JP",
+        "name": "Japan"
+      }
+    },
+    "contact": {
+      "email": "contact@blue-partners.example.com",
+      "phone": "+81 3 194011",
+      "website": "https://blue-partners.example.com"
+    },
+    "company": {
+      "industry": "Textiles",
+      "employeeCount": 16000,
+      "foundedYear": 1983
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1,
+      "since": "2021-02-21",
+      "procurement": {
+        "category": "Professional Services",
+        "annualSpend": {
+          "amount": 7864000,
+          "currency": "JPY"
+        }
+      }
+    },
+    "risk": {
+      "score": 89,
+      "level": "high",
+      "lastCalculatedAt": "2026-06-06T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 23,
+      "valid": 19,
+      "expiringSoon": 4,
+      "expired": 0
+    },
+    "createdAt": "2021-02-21T14:00:00Z",
+    "updatedAt": "2026-06-06T14:00:00Z"
+  },
+  "sup_040": {
+    "id": "sup_040",
+    "identity": {
+      "name": "Terra Partners Co., Ltd.",
+      "legalName": "Terra Partners Co., Ltd.",
+      "identifiers": {
+        "vatNumber": "CN584384399",
+        "lei": "529975824581247651",
+        "duns": "793818040"
+      }
+    },
+    "address": {
+      "street": "Shennan Avenue 132",
+      "city": "Shenzhen",
+      "postalCode": "518001",
+      "country": {
+        "code": "CN",
+        "name": "China"
+      }
+    },
+    "contact": {
+      "email": "contact@terra-partners.example.com",
+      "phone": "+86 21 990623",
+      "website": "https://terra-partners.example.com"
+    },
+    "company": {
+      "industry": "Pharmaceuticals",
+      "employeeCount": 23799,
+      "foundedYear": 1998
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3,
+      "since": "2025-07-02",
+      "procurement": {
+        "category": "Machinery",
+        "annualSpend": {
+          "amount": 4503000,
+          "currency": "CNY"
+        }
+      }
+    },
+    "risk": {
+      "score": 26,
+      "level": "low",
+      "lastCalculatedAt": "2026-05-06T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 43,
+      "lastCompletedAt": "2026-01-05T14:00:00Z",
+      "expiresAt": "2027-01-05T00:00:00Z"
+    },
+    "documents": {
+      "total": 22,
+      "valid": 19,
+      "expiringSoon": 1,
+      "expired": 2
+    },
+    "createdAt": "2025-07-02T14:00:00Z",
+    "updatedAt": "2026-05-06T14:00:00Z"
+  },
+  "sup_041": {
+    "id": "sup_041",
+    "identity": {
+      "name": "Meridian Partners S.p.A.",
+      "legalName": "Meridian Partners S.p.A.",
+      "identifiers": {
+        "vatNumber": "IT913281899",
+        "lei": "529970431478728838",
+        "duns": "704272104"
+      }
+    },
+    "address": {
+      "street": "Via Montenapoleone 193",
+      "city": "Milan",
+      "postalCode": "20121",
+      "country": {
+        "code": "IT",
+        "name": "Italy"
+      }
+    },
+    "contact": {
+      "email": "contact@meridian-partners.example.com",
+      "phone": "+39 02 463425",
+      "website": "https://meridian-partners.example.com"
+    },
+    "company": {
+      "industry": "Packaging",
+      "employeeCount": 2898,
+      "foundedYear": 1947
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3,
+      "since": "2020-07-13",
+      "procurement": {
+        "category": "Components",
+        "annualSpend": {
+          "amount": 6838000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 36,
+      "level": "low",
+      "lastCalculatedAt": "2026-08-02T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 83,
+      "lastCompletedAt": "2024-10-08T14:00:00Z",
+      "expiresAt": "2025-10-08T00:00:00Z"
+    },
+    "documents": {
+      "total": 9,
+      "valid": 5,
+      "expiringSoon": 1,
+      "expired": 3
+    },
+    "createdAt": "2020-07-13T14:00:00Z",
+    "updatedAt": "2026-08-02T14:00:00Z"
+  },
+  "sup_042": {
+    "id": "sup_042",
+    "identity": {
+      "name": "Meridian Metals s.r.o.",
+      "legalName": "Meridian Metals s.r.o.",
+      "identifiers": {
+        "vatNumber": "CZ463849434",
+        "lei": "529991448267744932",
+        "duns": "128742223"
+      }
+    },
+    "address": {
+      "street": "Václavské náměstí 125",
+      "city": "Prague",
+      "postalCode": "110 00",
+      "country": {
+        "code": "CZ",
+        "name": "Czechia"
+      }
+    },
+    "contact": {
+      "email": "contact@meridian-metals.example.com",
+      "phone": "+420 2 294561",
+      "website": "https://meridian-metals.example.com"
+    },
+    "company": {
+      "industry": "Manufacturing",
+      "employeeCount": 18227,
+      "foundedYear": 1998
+    },
+    "relationship": {
+      "status": "inactive",
+      "tier": 3,
+      "since": "2022-07-29",
+      "procurement": {
+        "category": "Raw Materials",
+        "annualSpend": {
+          "amount": 4700000,
+          "currency": "CZK"
+        }
+      }
+    },
+    "risk": {
+      "score": 64,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-30T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 70,
+      "lastCompletedAt": "2026-02-18T14:00:00Z",
+      "expiresAt": "2027-02-18T00:00:00Z"
+    },
+    "documents": {
+      "total": 5,
+      "valid": 5,
+      "expiringSoon": 0,
+      "expired": 0
+    },
+    "createdAt": "2022-07-29T14:00:00Z",
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  "sup_043": {
+    "id": "sup_043",
+    "identity": {
+      "name": "Helio Works Ltd",
+      "legalName": "Helio Works Ltd",
+      "identifiers": {
+        "vatNumber": "GB161307737",
+        "lei": "529925398803990535",
+        "duns": "740726535"
+      }
+    },
+    "address": {
+      "street": "Deansgate 239",
+      "city": "Manchester",
+      "postalCode": "M1 1AE",
+      "country": {
+        "code": "GB",
+        "name": "United Kingdom"
+      }
+    },
+    "contact": {
+      "email": "contact@helio-works.example.com",
+      "phone": "+44 20 338917",
+      "website": "https://helio-works.example.com"
+    },
+    "company": {
+      "industry": "Electronics",
+      "employeeCount": 9663,
+      "foundedYear": 2020
+    },
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1,
+      "since": "2025-01-11",
+      "procurement": {
+        "category": "Machinery",
+        "annualSpend": {
+          "amount": 7982000,
+          "currency": "GBP"
+        }
+      }
+    },
+    "risk": {
+      "score": 50,
+      "level": "medium",
+      "lastCalculatedAt": "2026-08-28T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 13,
+      "valid": 10,
+      "expiringSoon": 3,
+      "expired": 0
+    },
+    "createdAt": "2025-01-11T14:00:00Z",
+    "updatedAt": "2026-08-28T14:00:00Z"
+  },
+  "sup_044": {
+    "id": "sup_044",
+    "identity": {
+      "name": "Solaris Technologies SAS",
+      "legalName": "Solaris Technologies SAS",
+      "identifiers": {
+        "vatNumber": "FR907246528",
+        "lei": "529988853390583463",
+        "duns": "576393284"
+      }
+    },
+    "address": {
+      "street": "Rue de la République 99",
+      "city": "Lyon",
+      "postalCode": "69002",
+      "country": {
+        "code": "FR",
+        "name": "France"
+      }
+    },
+    "contact": {
+      "email": "contact@solaris-technologies.example.com",
+      "phone": "+33 1 942323",
+      "website": "https://solaris-technologies.example.com"
+    },
+    "company": {
+      "industry": "Pharmaceuticals",
+      "employeeCount": 1262,
+      "foundedYear": 1978
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2019-09-19",
+      "procurement": {
+        "category": "Facility Management",
+        "annualSpend": {
+          "amount": 4203000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 85,
+      "level": "high",
+      "lastCalculatedAt": "2026-07-18T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 76,
+      "lastCompletedAt": "2025-05-11T14:00:00Z",
+      "expiresAt": "2026-05-11T00:00:00Z"
+    },
+    "documents": {
+      "total": 8,
+      "valid": 4,
+      "expiringSoon": 4,
+      "expired": 0
+    },
+    "createdAt": "2019-09-19T14:00:00Z",
+    "updatedAt": "2026-07-18T14:00:00Z"
+  },
+  "sup_045": {
+    "id": "sup_045",
+    "identity": {
+      "name": "Terra Components Ltd",
+      "legalName": "Terra Components Ltd",
+      "identifiers": {
+        "vatNumber": "GB024768996",
+        "lei": "529984190929039436",
+        "duns": "464095801"
+      }
+    },
+    "address": {
+      "street": "Cheapside 65",
+      "city": "London",
+      "postalCode": "EC1A 1BB",
+      "country": {
+        "code": "GB",
+        "name": "United Kingdom"
+      }
+    },
+    "contact": {
+      "email": "contact@terra-components.example.com",
+      "phone": "+44 20 590205",
+      "website": "https://terra-components.example.com"
+    },
+    "company": {
+      "industry": "Construction",
+      "employeeCount": 18381,
+      "foundedYear": 1999
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 2,
+      "since": "2019-09-08",
+      "procurement": {
+        "category": "Components",
+        "annualSpend": {
+          "amount": 9213000,
+          "currency": "GBP"
+        }
+      }
+    },
+    "risk": {
+      "score": 10,
+      "level": "low",
+      "lastCalculatedAt": "2026-07-13T14:00:00Z"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 19,
+      "valid": 18,
+      "expiringSoon": 0,
+      "expired": 1
+    },
+    "createdAt": "2019-09-08T14:00:00Z",
+    "updatedAt": "2026-07-13T14:00:00Z"
+  },
+  "sup_046": {
+    "id": "sup_046",
+    "identity": {
+      "name": "Delta Foods Inc.",
+      "legalName": "Delta Foods Inc.",
+      "identifiers": {
+        "vatNumber": "US761984501",
+        "lei": "529956839472626867",
+        "duns": "838059446"
+      }
+    },
+    "address": {
+      "street": "Broadway 51",
+      "city": "New York",
+      "postalCode": "10001",
+      "country": {
+        "code": "US",
+        "name": "United States"
+      }
+    },
+    "contact": {
+      "email": "contact@delta-foods.example.com",
+      "phone": "+1 212 977105",
+      "website": "https://delta-foods.example.com"
+    },
+    "company": {
+      "industry": "Food & Beverage",
+      "employeeCount": 18518,
+      "foundedYear": 2001
+    },
+    "relationship": {
+      "status": "inactive",
+      "tier": 1,
+      "since": "2020-05-16",
+      "procurement": {
+        "category": "Components",
+        "annualSpend": {
+          "amount": 5823000,
+          "currency": "USD"
+        }
+      }
+    },
+    "risk": {
+      "score": 42,
+      "level": "low",
+      "lastCalculatedAt": "2026-07-12T14:00:00Z"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 21,
+      "valid": 17,
+      "expiringSoon": 2,
+      "expired": 2
+    },
+    "createdAt": "2020-05-16T14:00:00Z",
+    "updatedAt": "2026-07-12T14:00:00Z"
+  },
+  "sup_047": {
+    "id": "sup_047",
+    "identity": {
+      "name": "Solaris Partners SAS",
+      "legalName": "Solaris Partners SAS",
+      "identifiers": {
+        "vatNumber": "FR941494630",
+        "lei": "529944164077317728",
+        "duns": "861673613"
+      }
+    },
+    "address": {
+      "street": "Rue de Rivoli 86",
+      "city": "Paris",
+      "postalCode": "75001",
+      "country": {
+        "code": "FR",
+        "name": "France"
+      }
+    },
+    "contact": {
+      "email": "contact@solaris-partners.example.com",
+      "phone": "+33 1 195281",
+      "website": "https://solaris-partners.example.com"
+    },
+    "company": {
+      "industry": "IT Services",
+      "employeeCount": 23725,
+      "foundedYear": 1981
+    },
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3,
+      "since": "2023-10-17",
+      "procurement": {
+        "category": "Machinery",
+        "annualSpend": {
+          "amount": 38000,
+          "currency": "EUR"
+        }
+      }
+    },
+    "risk": {
+      "score": 84,
+      "level": "high",
+      "lastCalculatedAt": "2026-08-30T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 52,
+      "lastCompletedAt": "2025-01-05T14:00:00Z",
+      "expiresAt": "2026-01-05T00:00:00Z"
+    },
+    "documents": {
+      "total": 19,
+      "valid": 15,
+      "expiringSoon": 1,
+      "expired": 3
+    },
+    "createdAt": "2023-10-17T14:00:00Z",
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  "sup_048": {
+    "id": "sup_048",
+    "identity": {
+      "name": "Meridian Group s.r.o.",
+      "legalName": "Meridian Group s.r.o.",
+      "identifiers": {
+        "vatNumber": "CZ397259520",
+        "lei": "529908566714387153",
+        "duns": "386550290"
+      }
+    },
+    "address": {
+      "street": "Václavské náměstí 207",
+      "city": "Prague",
+      "postalCode": "110 00",
+      "country": {
+        "code": "CZ",
+        "name": "Czechia"
+      }
+    },
+    "contact": {
+      "email": "contact@meridian-group.example.com",
+      "phone": "+420 2 630371",
+      "website": "https://meridian-group.example.com"
+    },
+    "company": {
+      "industry": "Energy",
+      "employeeCount": 17353,
+      "foundedYear": 2017
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2021-06-04",
+      "procurement": {
+        "category": "Consumables",
+        "annualSpend": {
+          "amount": 6025000,
+          "currency": "CZK"
+        }
+      }
+    },
+    "risk": {
+      "score": 61,
+      "level": "medium",
+      "lastCalculatedAt": "2026-06-14T14:00:00Z"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 83,
+      "lastCompletedAt": "2026-03-03T14:00:00Z",
+      "expiresAt": "2027-03-03T00:00:00Z"
+    },
+    "documents": {
+      "total": 19,
+      "valid": 14,
+      "expiringSoon": 4,
+      "expired": 1
+    },
+    "createdAt": "2021-06-04T14:00:00Z",
+    "updatedAt": "2026-06-14T14:00:00Z"
+  },
+  "sup_049": {
+    "id": "sup_049",
+    "identity": {
+      "name": "Everest Materials K.K.",
+      "legalName": "Everest Materials K.K.",
+      "identifiers": {
+        "vatNumber": "JP273338684",
+        "lei": "529963785110415790",
+        "duns": "497599118"
+      }
+    },
+    "address": {
+      "street": "Umeda 214",
+      "city": "Osaka",
+      "postalCode": "530-0001",
+      "country": {
+        "code": "JP",
+        "name": "Japan"
+      }
+    },
+    "contact": {
+      "email": "contact@everest-materials.example.com",
+      "phone": "+81 3 382747",
+      "website": "https://everest-materials.example.com"
+    },
+    "company": {
+      "industry": "Automotive",
+      "employeeCount": 16372,
+      "foundedYear": 1993
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 3,
+      "since": "2021-03-07",
+      "procurement": {
+        "category": "Chemicals",
+        "annualSpend": {
+          "amount": 2801000,
+          "currency": "JPY"
+        }
+      }
+    },
+    "risk": {
+      "score": 82,
+      "level": "high",
+      "lastCalculatedAt": "2026-07-06T14:00:00Z"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 39,
+      "lastCompletedAt": "2026-02-25T14:00:00Z",
+      "expiresAt": "2027-02-25T00:00:00Z"
+    },
+    "documents": {
+      "total": 16,
+      "valid": 12,
+      "expiringSoon": 4,
+      "expired": 0
+    },
+    "createdAt": "2021-03-07T14:00:00Z",
+    "updatedAt": "2026-07-06T14:00:00Z"
+  },
+  "sup_050": {
+    "id": "sup_050",
+    "identity": {
+      "name": "Prime Group Co., Ltd.",
+      "legalName": "Prime Group Co., Ltd.",
+      "identifiers": {
+        "vatNumber": "CN967332002",
+        "lei": "529906545930694017",
+        "duns": "327137067"
+      }
+    },
+    "address": {
+      "street": "Shennan Avenue 172",
+      "city": "Shenzhen",
+      "postalCode": "518001",
+      "country": {
+        "code": "CN",
+        "name": "China"
+      }
+    },
+    "contact": {
+      "email": "contact@prime-group.example.com",
+      "phone": "+86 21 849755",
+      "website": "https://prime-group.example.com"
+    },
+    "company": {
+      "industry": "Construction",
+      "employeeCount": 14003,
+      "foundedYear": 1973
+    },
+    "relationship": {
+      "status": "active",
+      "tier": 1,
+      "since": "2022-05-03",
+      "procurement": {
+        "category": "Facility Management",
+        "annualSpend": {
+          "amount": 3455000,
+          "currency": "CNY"
+        }
+      }
+    },
+    "risk": {
+      "score": 12,
+      "level": "low",
+      "lastCalculatedAt": "2026-08-20T14:00:00Z"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null,
+      "expiresAt": null
+    },
+    "documents": {
+      "total": 14,
+      "valid": 14,
+      "expiringSoon": 0,
+      "expired": 0
+    },
+    "createdAt": "2022-05-03T14:00:00Z",
+    "updatedAt": "2026-08-20T14:00:00Z"
+  }
+}

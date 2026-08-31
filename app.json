@@ -1,0 +1,32 @@
+{
+  "name": "integritynext-poc-server",
+  "description": "IntegrityNext PoC REST API — read-only supplier endpoints backed by static JSON fixtures.",
+  "keywords": ["nestjs", "typescript", "rest", "openapi", "poc"],
+  "stack": "heroku-24",
+  "buildpacks": [{ "url": "heroku/nodejs" }],
+  "env": {
+    "NODE_ENV": {
+      "description": "Runtime environment.",
+      "value": "production"
+    },
+    "SESSION_TOKEN": {
+      "description": "Shared secret clients must send in the X-SESSION header.",
+      "generator": "secret"
+    },
+    "SWAGGER_ENABLED": {
+      "description": "Serve the Swagger UI at /api-docs.",
+      "value": "true"
+    },
+    "CORS_ORIGINS": {
+      "description": "Comma-separated allowed origins, or * for any.",
+      "value": "*"
+    }
+  },
+  "formation": {
+    "web": { "quantity": 1, "size": "basic" }
+  },
+  "healthchecks": {
+    "web": [{ "type": "startup", "name": "web check", "path": "/health", "attempts": 3 }]
+  },
+  "scripts": {}
+}

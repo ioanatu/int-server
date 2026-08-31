@@ -1,0 +1,1152 @@
+[
+  {
+    "id": "sup_001",
+    "name": "Example Supplier GmbH",
+    "country": {
+      "code": "DE",
+      "name": "Germany"
+    },
+    "industry": "Manufacturing",
+    "relationship": {
+      "status": "active",
+      "tier": 1
+    },
+    "risk": {
+      "score": 82,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 84,
+      "lastCompletedAt": "2026-07-12T09:30:00Z"
+    },
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  {
+    "id": "sup_002",
+    "name": "Vega Works Co., Ltd.",
+    "country": {
+      "code": "CN",
+      "name": "China"
+    },
+    "industry": "IT Services",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 2
+    },
+    "risk": {
+      "score": 88,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 85,
+      "lastCompletedAt": "2025-09-20T14:00:00Z"
+    },
+    "updatedAt": "2026-06-24T14:00:00Z"
+  },
+  {
+    "id": "sup_003",
+    "name": "Nord Technologies GmbH",
+    "country": {
+      "code": "DE",
+      "name": "Germany"
+    },
+    "industry": "Automotive",
+    "relationship": {
+      "status": "active",
+      "tier": 1
+    },
+    "risk": {
+      "score": 60,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 49,
+      "lastCompletedAt": "2025-04-24T14:00:00Z"
+    },
+    "updatedAt": "2026-08-15T14:00:00Z"
+  },
+  {
+    "id": "sup_004",
+    "name": "Blue Logistics Pvt Ltd",
+    "country": {
+      "code": "IN",
+      "name": "India"
+    },
+    "industry": "Food & Beverage",
+    "relationship": {
+      "status": "inactive",
+      "tier": 1
+    },
+    "risk": {
+      "score": 66,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 36,
+      "lastCompletedAt": "2025-06-09T14:00:00Z"
+    },
+    "updatedAt": "2026-08-25T14:00:00Z"
+  },
+  {
+    "id": "sup_005",
+    "name": "Solaris Logistics Ltd",
+    "country": {
+      "code": "GB",
+      "name": "United Kingdom"
+    },
+    "industry": "Metals & Mining",
+    "relationship": {
+      "status": "active",
+      "tier": 2
+    },
+    "risk": {
+      "score": 58,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-06-30T14:00:00Z"
+  },
+  {
+    "id": "sup_006",
+    "name": "Helio Group Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Metals & Mining",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 2
+    },
+    "risk": {
+      "score": 50,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 90,
+      "lastCompletedAt": "2025-03-24T14:00:00Z"
+    },
+    "updatedAt": "2026-06-28T14:00:00Z"
+  },
+  {
+    "id": "sup_007",
+    "name": "Aurora Materials S.p.A.",
+    "country": {
+      "code": "IT",
+      "name": "Italy"
+    },
+    "industry": "Chemicals",
+    "relationship": {
+      "status": "inactive",
+      "tier": 3
+    },
+    "risk": {
+      "score": 15,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-06-09T14:00:00Z"
+  },
+  {
+    "id": "sup_008",
+    "name": "Cardinal Industries B.V.",
+    "country": {
+      "code": "NL",
+      "name": "Netherlands"
+    },
+    "industry": "Metals & Mining",
+    "relationship": {
+      "status": "active",
+      "tier": 2
+    },
+    "risk": {
+      "score": 36,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 75,
+      "lastCompletedAt": "2026-01-18T14:00:00Z"
+    },
+    "updatedAt": "2026-07-23T14:00:00Z"
+  },
+  {
+    "id": "sup_009",
+    "name": "Blue Works Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Textiles",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1
+    },
+    "risk": {
+      "score": 17,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 81,
+      "lastCompletedAt": "2024-12-19T14:00:00Z"
+    },
+    "updatedAt": "2026-08-28T14:00:00Z"
+  },
+  {
+    "id": "sup_010",
+    "name": "Solaris Logistics S.L.",
+    "country": {
+      "code": "ES",
+      "name": "Spain"
+    },
+    "industry": "Food & Beverage",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 12,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 92,
+      "lastCompletedAt": "2025-07-15T14:00:00Z"
+    },
+    "updatedAt": "2026-07-19T14:00:00Z"
+  },
+  {
+    "id": "sup_011",
+    "name": "Alpen Chemicals GmbH",
+    "country": {
+      "code": "DE",
+      "name": "Germany"
+    },
+    "industry": "Textiles",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3
+    },
+    "risk": {
+      "score": 62,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-08-20T14:00:00Z"
+  },
+  {
+    "id": "sup_012",
+    "name": "Cardinal Chemicals Pvt Ltd",
+    "country": {
+      "code": "IN",
+      "name": "India"
+    },
+    "industry": "Electronics",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 2
+    },
+    "risk": {
+      "score": 62,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-05-06T14:00:00Z"
+  },
+  {
+    "id": "sup_013",
+    "name": "Terra Packaging S.L.",
+    "country": {
+      "code": "ES",
+      "name": "Spain"
+    },
+    "industry": "Chemicals",
+    "relationship": {
+      "status": "inactive",
+      "tier": 3
+    },
+    "risk": {
+      "score": 77,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-05-18T14:00:00Z"
+  },
+  {
+    "id": "sup_014",
+    "name": "Falcon Works B.V.",
+    "country": {
+      "code": "NL",
+      "name": "Netherlands"
+    },
+    "industry": "Agriculture",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1
+    },
+    "risk": {
+      "score": 65,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 48,
+      "lastCompletedAt": "2025-10-28T14:00:00Z"
+    },
+    "updatedAt": "2026-05-25T14:00:00Z"
+  },
+  {
+    "id": "sup_015",
+    "name": "Cypress Logistics S.L.",
+    "country": {
+      "code": "ES",
+      "name": "Spain"
+    },
+    "industry": "Agriculture",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1
+    },
+    "risk": {
+      "score": 64,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 38,
+      "lastCompletedAt": "2025-04-20T14:00:00Z"
+    },
+    "updatedAt": "2026-05-08T14:00:00Z"
+  },
+  {
+    "id": "sup_016",
+    "name": "Cardinal Works A.Ş.",
+    "country": {
+      "code": "TR",
+      "name": "Türkiye"
+    },
+    "industry": "Food & Beverage",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3
+    },
+    "risk": {
+      "score": 66,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 68,
+      "lastCompletedAt": "2024-11-24T14:00:00Z"
+    },
+    "updatedAt": "2026-08-10T14:00:00Z"
+  },
+  {
+    "id": "sup_017",
+    "name": "Cardinal Foods Sp. z o.o.",
+    "country": {
+      "code": "PL",
+      "name": "Poland"
+    },
+    "industry": "Electronics",
+    "relationship": {
+      "status": "active",
+      "tier": 2
+    },
+    "risk": {
+      "score": 77,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  {
+    "id": "sup_018",
+    "name": "Silva Partners AB",
+    "country": {
+      "code": "SE",
+      "name": "Sweden"
+    },
+    "industry": "Manufacturing",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 42,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 45,
+      "lastCompletedAt": "2026-01-03T14:00:00Z"
+    },
+    "updatedAt": "2026-05-19T14:00:00Z"
+  },
+  {
+    "id": "sup_019",
+    "name": "Meridian Technologies B.V.",
+    "country": {
+      "code": "NL",
+      "name": "Netherlands"
+    },
+    "industry": "Electronics",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 66,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-08-29T14:00:00Z"
+  },
+  {
+    "id": "sup_020",
+    "name": "Granite Metals Pvt Ltd",
+    "country": {
+      "code": "IN",
+      "name": "India"
+    },
+    "industry": "IT Services",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 48,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 80,
+      "lastCompletedAt": "2026-02-09T14:00:00Z"
+    },
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  {
+    "id": "sup_021",
+    "name": "Nord Components Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Food & Beverage",
+    "relationship": {
+      "status": "active",
+      "tier": 2
+    },
+    "risk": {
+      "score": 19,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 62,
+      "lastCompletedAt": "2025-01-22T14:00:00Z"
+    },
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  {
+    "id": "sup_022",
+    "name": "Blue Foods SAS",
+    "country": {
+      "code": "FR",
+      "name": "France"
+    },
+    "industry": "Metals & Mining",
+    "relationship": {
+      "status": "inactive",
+      "tier": 2
+    },
+    "risk": {
+      "score": 59,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  {
+    "id": "sup_023",
+    "name": "Baltic Chemicals SAS",
+    "country": {
+      "code": "FR",
+      "name": "France"
+    },
+    "industry": "Logistics",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 39,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 39,
+      "lastCompletedAt": "2025-09-12T14:00:00Z"
+    },
+    "updatedAt": "2026-06-25T14:00:00Z"
+  },
+  {
+    "id": "sup_024",
+    "name": "Falcon Chemicals B.V.",
+    "country": {
+      "code": "NL",
+      "name": "Netherlands"
+    },
+    "industry": "IT Services",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1
+    },
+    "risk": {
+      "score": 35,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 68,
+      "lastCompletedAt": "2025-06-30T14:00:00Z"
+    },
+    "updatedAt": "2026-05-27T14:00:00Z"
+  },
+  {
+    "id": "sup_025",
+    "name": "Kappa Logistics s.r.o.",
+    "country": {
+      "code": "CZ",
+      "name": "Czechia"
+    },
+    "industry": "Manufacturing",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 31,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-08-18T14:00:00Z"
+  },
+  {
+    "id": "sup_026",
+    "name": "Meridian Systems AB",
+    "country": {
+      "code": "SE",
+      "name": "Sweden"
+    },
+    "industry": "Agriculture",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1
+    },
+    "risk": {
+      "score": 69,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-05-16T14:00:00Z"
+  },
+  {
+    "id": "sup_027",
+    "name": "Everest Partners Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Chemicals",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1
+    },
+    "risk": {
+      "score": 16,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 84,
+      "lastCompletedAt": "2026-01-21T14:00:00Z"
+    },
+    "updatedAt": "2026-05-15T14:00:00Z"
+  },
+  {
+    "id": "sup_028",
+    "name": "Alpen Industries Sp. z o.o.",
+    "country": {
+      "code": "PL",
+      "name": "Poland"
+    },
+    "industry": "Pharmaceuticals",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3
+    },
+    "risk": {
+      "score": 78,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 88,
+      "lastCompletedAt": "2026-05-06T14:00:00Z"
+    },
+    "updatedAt": "2026-07-16T14:00:00Z"
+  },
+  {
+    "id": "sup_029",
+    "name": "Cardinal Solutions Co., Ltd.",
+    "country": {
+      "code": "CN",
+      "name": "China"
+    },
+    "industry": "Electronics",
+    "relationship": {
+      "status": "active",
+      "tier": 1
+    },
+    "risk": {
+      "score": 33,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 60,
+      "lastCompletedAt": "2026-03-24T14:00:00Z"
+    },
+    "updatedAt": "2026-07-02T14:00:00Z"
+  },
+  {
+    "id": "sup_030",
+    "name": "Cardinal Industries Ltd",
+    "country": {
+      "code": "GB",
+      "name": "United Kingdom"
+    },
+    "industry": "Manufacturing",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3
+    },
+    "risk": {
+      "score": 63,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 46,
+      "lastCompletedAt": "2025-09-16T14:00:00Z"
+    },
+    "updatedAt": "2026-08-05T14:00:00Z"
+  },
+  {
+    "id": "sup_031",
+    "name": "Meridian Solutions Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Metals & Mining",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 1
+    },
+    "risk": {
+      "score": 72,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 40,
+      "lastCompletedAt": "2026-07-15T14:00:00Z"
+    },
+    "updatedAt": "2026-05-17T14:00:00Z"
+  },
+  {
+    "id": "sup_032",
+    "name": "Cardinal Supply Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Energy",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 60,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-06-27T14:00:00Z"
+  },
+  {
+    "id": "sup_033",
+    "name": "Orbis Components B.V.",
+    "country": {
+      "code": "NL",
+      "name": "Netherlands"
+    },
+    "industry": "Energy",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3
+    },
+    "risk": {
+      "score": 31,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 48,
+      "lastCompletedAt": "2025-10-06T14:00:00Z"
+    },
+    "updatedAt": "2026-06-29T14:00:00Z"
+  },
+  {
+    "id": "sup_034",
+    "name": "Iron Logistics Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Automotive",
+    "relationship": {
+      "status": "inactive",
+      "tier": 1
+    },
+    "risk": {
+      "score": 69,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 67,
+      "lastCompletedAt": "2025-05-14T14:00:00Z"
+    },
+    "updatedAt": "2026-07-31T14:00:00Z"
+  },
+  {
+    "id": "sup_035",
+    "name": "Lumen Systems SAS",
+    "country": {
+      "code": "FR",
+      "name": "France"
+    },
+    "industry": "Electronics",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 3
+    },
+    "risk": {
+      "score": 60,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 98,
+      "lastCompletedAt": "2025-09-11T14:00:00Z"
+    },
+    "updatedAt": "2026-06-23T14:00:00Z"
+  },
+  {
+    "id": "sup_036",
+    "name": "Cypress Systems S.p.A.",
+    "country": {
+      "code": "IT",
+      "name": "Italy"
+    },
+    "industry": "Logistics",
+    "relationship": {
+      "status": "active",
+      "tier": 1
+    },
+    "risk": {
+      "score": 80,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 40,
+      "lastCompletedAt": "2024-12-17T14:00:00Z"
+    },
+    "updatedAt": "2026-06-15T14:00:00Z"
+  },
+  {
+    "id": "sup_037",
+    "name": "Everest Logistics Ltd",
+    "country": {
+      "code": "GB",
+      "name": "United Kingdom"
+    },
+    "industry": "Textiles",
+    "relationship": {
+      "status": "active",
+      "tier": 2
+    },
+    "risk": {
+      "score": 47,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 80,
+      "lastCompletedAt": "2024-10-16T14:00:00Z"
+    },
+    "updatedAt": "2026-06-30T14:00:00Z"
+  },
+  {
+    "id": "sup_038",
+    "name": "Nord Solutions B.V.",
+    "country": {
+      "code": "NL",
+      "name": "Netherlands"
+    },
+    "industry": "Logistics",
+    "relationship": {
+      "status": "active",
+      "tier": 2
+    },
+    "risk": {
+      "score": 58,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 82,
+      "lastCompletedAt": "2025-06-20T14:00:00Z"
+    },
+    "updatedAt": "2026-07-17T14:00:00Z"
+  },
+  {
+    "id": "sup_039",
+    "name": "Blue Partners K.K.",
+    "country": {
+      "code": "JP",
+      "name": "Japan"
+    },
+    "industry": "Textiles",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1
+    },
+    "risk": {
+      "score": 89,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-06-06T14:00:00Z"
+  },
+  {
+    "id": "sup_040",
+    "name": "Terra Partners Co., Ltd.",
+    "country": {
+      "code": "CN",
+      "name": "China"
+    },
+    "industry": "Pharmaceuticals",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3
+    },
+    "risk": {
+      "score": 26,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 43,
+      "lastCompletedAt": "2026-01-05T14:00:00Z"
+    },
+    "updatedAt": "2026-05-06T14:00:00Z"
+  },
+  {
+    "id": "sup_041",
+    "name": "Meridian Partners S.p.A.",
+    "country": {
+      "code": "IT",
+      "name": "Italy"
+    },
+    "industry": "Packaging",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3
+    },
+    "risk": {
+      "score": 36,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 83,
+      "lastCompletedAt": "2024-10-08T14:00:00Z"
+    },
+    "updatedAt": "2026-08-02T14:00:00Z"
+  },
+  {
+    "id": "sup_042",
+    "name": "Meridian Metals s.r.o.",
+    "country": {
+      "code": "CZ",
+      "name": "Czechia"
+    },
+    "industry": "Manufacturing",
+    "relationship": {
+      "status": "inactive",
+      "tier": 3
+    },
+    "risk": {
+      "score": 64,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 70,
+      "lastCompletedAt": "2026-02-18T14:00:00Z"
+    },
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  {
+    "id": "sup_043",
+    "name": "Helio Works Ltd",
+    "country": {
+      "code": "GB",
+      "name": "United Kingdom"
+    },
+    "industry": "Electronics",
+    "relationship": {
+      "status": "offboarded",
+      "tier": 1
+    },
+    "risk": {
+      "score": 50,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-08-28T14:00:00Z"
+  },
+  {
+    "id": "sup_044",
+    "name": "Solaris Technologies SAS",
+    "country": {
+      "code": "FR",
+      "name": "France"
+    },
+    "industry": "Pharmaceuticals",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 85,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 76,
+      "lastCompletedAt": "2025-05-11T14:00:00Z"
+    },
+    "updatedAt": "2026-07-18T14:00:00Z"
+  },
+  {
+    "id": "sup_045",
+    "name": "Terra Components Ltd",
+    "country": {
+      "code": "GB",
+      "name": "United Kingdom"
+    },
+    "industry": "Construction",
+    "relationship": {
+      "status": "active",
+      "tier": 2
+    },
+    "risk": {
+      "score": 10,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-07-13T14:00:00Z"
+  },
+  {
+    "id": "sup_046",
+    "name": "Delta Foods Inc.",
+    "country": {
+      "code": "US",
+      "name": "United States"
+    },
+    "industry": "Food & Beverage",
+    "relationship": {
+      "status": "inactive",
+      "tier": 1
+    },
+    "risk": {
+      "score": 42,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "not_started",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-07-12T14:00:00Z"
+  },
+  {
+    "id": "sup_047",
+    "name": "Solaris Partners SAS",
+    "country": {
+      "code": "FR",
+      "name": "France"
+    },
+    "industry": "IT Services",
+    "relationship": {
+      "status": "onboarding",
+      "tier": 3
+    },
+    "risk": {
+      "score": 84,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 52,
+      "lastCompletedAt": "2025-01-05T14:00:00Z"
+    },
+    "updatedAt": "2026-08-30T14:00:00Z"
+  },
+  {
+    "id": "sup_048",
+    "name": "Meridian Group s.r.o.",
+    "country": {
+      "code": "CZ",
+      "name": "Czechia"
+    },
+    "industry": "Energy",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 61,
+      "level": "medium"
+    },
+    "assessment": {
+      "status": "expired",
+      "score": 83,
+      "lastCompletedAt": "2026-03-03T14:00:00Z"
+    },
+    "updatedAt": "2026-06-14T14:00:00Z"
+  },
+  {
+    "id": "sup_049",
+    "name": "Everest Materials K.K.",
+    "country": {
+      "code": "JP",
+      "name": "Japan"
+    },
+    "industry": "Automotive",
+    "relationship": {
+      "status": "active",
+      "tier": 3
+    },
+    "risk": {
+      "score": 82,
+      "level": "high"
+    },
+    "assessment": {
+      "status": "completed",
+      "score": 39,
+      "lastCompletedAt": "2026-02-25T14:00:00Z"
+    },
+    "updatedAt": "2026-07-06T14:00:00Z"
+  },
+  {
+    "id": "sup_050",
+    "name": "Prime Group Co., Ltd.",
+    "country": {
+      "code": "CN",
+      "name": "China"
+    },
+    "industry": "Construction",
+    "relationship": {
+      "status": "active",
+      "tier": 1
+    },
+    "risk": {
+      "score": 12,
+      "level": "low"
+    },
+    "assessment": {
+      "status": "in_progress",
+      "score": null,
+      "lastCompletedAt": null
+    },
+    "updatedAt": "2026-08-20T14:00:00Z"
+  }
+]
