@@ -113,17 +113,32 @@ export class SupplierAssessmentDto {
   @ApiProperty({ enum: ASSESSMENT_STATUSES, example: 'completed' })
   status!: AssessmentStatus;
 
+  // `type` is explicit on the three nullable properties below: TypeScript emits
+  // `Object` as the design:type for a `T | null` union, so without it the generated
+  // OpenAPI schema degrades to `type: object` and clients generate `Record<string,
+  // never> | null` instead of the real type.
   @ApiProperty({
+    type: Number,
     nullable: true,
     description: 'Null until an assessment has been completed at least once.',
     example: 84,
   })
   score!: number | null;
 
-  @ApiProperty({ format: 'date-time', nullable: true, example: '2026-07-12T09:30:00Z' })
+  @ApiProperty({
+    type: String,
+    format: 'date-time',
+    nullable: true,
+    example: '2026-07-12T09:30:00Z',
+  })
   lastCompletedAt!: string | null;
 
-  @ApiProperty({ format: 'date-time', nullable: true, example: '2027-07-12T00:00:00Z' })
+  @ApiProperty({
+    type: String,
+    format: 'date-time',
+    nullable: true,
+    example: '2027-07-12T00:00:00Z',
+  })
   expiresAt!: string | null;
 }
 

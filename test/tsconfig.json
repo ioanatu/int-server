@@ -1,0 +1,11 @@
+{
+  // The e2e suite lives outside `src`, so editors and any tooling that resolves the
+  // nearest tsconfig from this directory would otherwise fall back to defaults and
+  // fail to find the Jest globals (`describe`, `it`, `expect`).
+  // Everything else is inherited from the root config.
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "node"]
+  },
+  "include": ["**/*.ts"]
+}

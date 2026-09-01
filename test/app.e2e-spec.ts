@@ -202,5 +202,39 @@ describe('IntNext PoC API (e2e)', () => {
       });
       expect(response.body.paths[BASE].get.security).toEqual([{ 'X-SESSION': [] }]);
     });
+
+    it('types nullable properties concretely, so generated clients stay accurate', async () => {
+      const response = await request(app.getHttpServer()).get('/api-docs-json').expect(200);
+
+      const assessment = response.body.components.schemas.SupplierAssessmentDto.properties;
+
+      // A `T | null` union has no usable design:type, so these degrade to
+      // `type: 'object'` unless @ApiProperty declares the type explicitly.
+      expect(assessment.score).toMatchObject({ type: 'number', nullable: true });
+      expect(assessment.lastCompletedAt).toMatchObject({ type: 'string', nullable: true });
+      expect(assessment.expiresAt).toMatchObject({ type: 'string', nullable: true });
+    });
+
+    it('leaves no schema property weakly typed as a bare object', async () => {
+      const response = await request(app.getHttpServer()).get('/api-docs-json').expect(200);
+
+      const weak: string[] = [];
+      for (const [name, schema] of Object.entries<Record<string, any>>(
+        response.body.components.schemas,
+      )) {
+        for (const [prop, value] of Object.entries<Record<string, any>>(schema.properties ?? {})) {
+          const isBareObject =
+            value.type === 'object' &&
+            !value.properties &&
+            !value.$ref &&
+            !value.additionalProperties;
+          if (isBareObject) {
+            weak.push(`${name}.${prop}`);
+          }
+        }
+      }
+
+      expect(weak).toEqual([]);
+    });
   });
 });
