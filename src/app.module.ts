@@ -5,6 +5,7 @@ import configuration from './config/configuration';
 import { validationSchema } from './config/validation.schema';
 import { SessionGuard } from './common/guards/session.guard';
 import { HealthModule } from './health/health.module';
+import { IndustriesModule } from './industries/industries.module';
 import { SuppliersModule } from './suppliers/suppliers.module';
 
 @Module({
@@ -17,6 +18,7 @@ import { SuppliersModule } from './suppliers/suppliers.module';
       validationOptions: { allowUnknown: true, abortEarly: false },
     }),
     SuppliersModule,
+    IndustriesModule,
     HealthModule,
   ],
   providers: [

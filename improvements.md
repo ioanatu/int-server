@@ -10,7 +10,7 @@ Each item states the current behaviour, why it matters, and the concrete change.
 
 ## 1. Security
 
-### 1.1 Replace the shared session token with real authentication — *highest priority*
+### 1.1 Replace the shared session token with real authentication — _highest priority_
 
 **Now:** one static `X-SESSION` secret shared by every client (requirement 12).
 
@@ -21,7 +21,7 @@ Rotation is a coordinated outage.
 **Change:** move to OAuth 2.0 client credentials or OIDC (Auth0, Entra ID, Cognito,
 Keycloak) with short-lived JWTs. Validate the signature and `aud`/`iss` in a guard,
 cache the JWKS. Keep the `X-SESSION` guard as a fallback for machine-to-machine callers
-that cannot do OAuth yet, and give each of those its *own* token so tokens can be
+that cannot do OAuth yet, and give each of those its _own_ token so tokens can be
 revoked individually.
 
 ### 1.2 Add authorisation on top of authentication

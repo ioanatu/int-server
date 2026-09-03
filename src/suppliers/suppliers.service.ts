@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { ListSuppliersQueryDto } from './dto/list-suppliers-query.dto';
 import { PaginatedSuppliersDto, SupplierListItemDto } from './dto/supplier-list-item.dto';
 import { SupplierDetailDto } from './dto/supplier-detail.dto';
+import { toSlug } from '../common/slug';
 import { SuppliersRepository } from './suppliers.repository';
 import type { SupplierListRecord } from './supplier.types';
 
@@ -19,7 +20,10 @@ export class SuppliersService {
     const { search, country, status, riskLevel, assessmentStatus, industry, page, limit } = query;
 
     const needle = search?.toLowerCase();
-    const industryNeedle = industry?.toLowerCase();
+    // Slugifying both sides lets the filter accept the id served by
+    // GET /api/v1/industries ("food-beverage") or the display name
+    // ("Food & Beverage"), in any casing, with one comparison.
+    const industryId = industry ? toSlug(industry) : undefined;
 
     const matches = this.repository.findAllSummaries().filter((supplier) => {
       if (needle && !SuppliersService.matchesSearch(supplier, needle)) {
@@ -37,7 +41,7 @@ export class SuppliersService {
       if (assessmentStatus && supplier.assessment.status !== assessmentStatus) {
         return false;
       }
-      if (industryNeedle && supplier.industry.toLowerCase() !== industryNeedle) {
+      if (industryId && toSlug(supplier.industry) !== industryId) {
         return false;
       }
       return true;

@@ -26,6 +26,7 @@ export function setupSwagger(app: INestApplication): void {
     .setLicense('UNLICENSED', '')
     .addServer('/', 'Current host')
     .addTag('Suppliers', 'Read access to supplier master data')
+    .addTag('Industries', 'Reference data for building supplier filters')
     .addTag('Health', 'Service liveness')
     .addApiKey(
       {

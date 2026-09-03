@@ -62,7 +62,7 @@ combined with **AND**.
 | `status`           | enum    | `active` \| `inactive` \| `onboarding` \| `offboarded`                                    |
 | `riskLevel`        | enum    | `low` \| `medium` \| `high`                                                               |
 | `assessmentStatus` | enum    | `completed` \| `in_progress` \| `not_started` \| `expired`                                |
-| `industry`         | string  | Exact match, case-insensitive                                                             |
+| `industry`         | string  | An `id` from `GET /api/v1/industries` (e.g. `food-beverage`) or the display name          |
 | `page`             | integer | ≥ 1, default `1`                                                                          |
 | `limit`            | integer | 1–100, default `10`                                                                       |
 
@@ -88,6 +88,34 @@ Unknown query parameters and out-of-range values are rejected with `400`.
 Returns the full supplier profile — identity, address, contact, company, relationship,
 risk, assessment and document counters. Responds `404` with the standard error envelope
 when the id is unknown.
+
+### `GET /api/v1/industries`
+
+Reference data for building an industry filter. Returns every industry present in the
+supplier data with a supplier count, sorted by name. Unpaginated — it is a small,
+closed set — and takes no query parameters.
+
+```json
+{
+  "data": [
+    { "id": "food-beverage", "name": "Food & Beverage", "supplierCount": 5 },
+    { "id": "it-services", "name": "IT Services", "supplierCount": 4 }
+  ],
+  "total": 14
+}
+```
+
+Each `id` is URL-safe and can be passed straight back as the `industry` filter, with no
+percent-encoding — which is the point, since names like `Food & Beverage` are awkward in
+a query string:
+
+```bash
+curl -H "X-SESSION: $SESSION_TOKEN" \
+  "http://localhost:3000/api/v1/suppliers?industry=food-beverage"
+```
+
+The list is derived from the supplier records rather than stored separately, so the
+values it advertises can never drift out of sync with what is actually filterable.
 
 ### Error envelope
 
@@ -209,6 +237,7 @@ int-server/
 │   ├── config/            # typed configuration + Joi env validation
 │   ├── data/              # the two JSON fixtures
 │   ├── health/            # unauthenticated liveness probe
+│   ├── industries/        # filter reference data, derived from the supplier fixtures
 │   ├── suppliers/         # controller → service → repository, DTOs, types
 │   ├── swagger.ts         # OpenAPI document + Swagger UI setup
 │   ├── app.module.ts

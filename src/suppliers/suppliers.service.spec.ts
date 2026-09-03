@@ -144,6 +144,47 @@ describe('SuppliersService', () => {
         repository.findAllSummaries().filter((s) => s.industry === 'Manufacturing').length,
       );
     });
+
+    it('accepts the industry id served by GET /api/v1/industries', () => {
+      const byId = service.findAll(query({ industry: 'manufacturing', limit: 100 }));
+      const byName = service.findAll(query({ industry: 'Manufacturing', limit: 100 }));
+
+      expect(byId.pagination.total).toBeGreaterThan(0);
+      expect(byId.data).toEqual(byName.data);
+    });
+
+    it('matches an industry whose name needs URL encoding, by id or by name', () => {
+      const expected = repository
+        .findAllSummaries()
+        .filter((s) => s.industry === 'Food & Beverage').length;
+
+      expect(expected).toBeGreaterThan(0);
+      // The id is the point of this test: "food-beverage" needs no percent-encoding.
+      expect(
+        service.findAll(query({ industry: 'food-beverage', limit: 100 })).pagination.total,
+      ).toBe(expected);
+      expect(
+        service.findAll(query({ industry: 'Food & Beverage', limit: 100 })).pagination.total,
+      ).toBe(expected);
+    });
+
+    it('returns an empty page for an unknown industry', () => {
+      const result = service.findAll(query({ industry: 'no-such-industry' }));
+
+      expect(result.data).toEqual([]);
+      expect(result.pagination.total).toBe(0);
+    });
+
+    it('combines the industry filter with the other filters', () => {
+      const combined = service.findAll(
+        query({ industry: 'manufacturing', status: 'active', limit: 100 }),
+      );
+
+      expect(combined.data.every((s) => s.status === 'active')).toBe(true);
+      for (const item of combined.data) {
+        expect(repository.findDetailById(item.id)!.company.industry).toBe('Manufacturing');
+      }
+    });
   });
 
   describe('findOne', () => {

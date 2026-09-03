@@ -70,8 +70,10 @@ export class ListSuppliersQueryDto {
   assessmentStatus?: AssessmentStatus;
 
   @ApiPropertyOptional({
-    description: 'Industry, matched case-insensitively.',
-    example: 'Manufacturing',
+    description:
+      'Industry to filter by. Accepts either the `id` from `GET /api/v1/industries` ' +
+      '(recommended — URL-safe) or the display name. Case-insensitive.',
+    example: 'food-beverage',
   })
   @IsOptional()
   @Transform(trim)

@@ -2,10 +2,19 @@
   // The e2e suite lives outside `src`, so editors and any tooling that resolves the
   // nearest tsconfig from this directory would otherwise fall back to defaults and
   // fail to find the Jest globals (`describe`, `it`, `expect`).
-  // Everything else is inherited from the root config.
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    // The specs import from `../src`, so the project root — not this directory — is
+    // the root of the program. Without this, tooling that derives `rootDir` from the
+    // config's own location reports TS6059 on every cross-directory import.
+    "rootDir": "..",
+    // Typechecking only: `nest build` emits from tsconfig.build.json, and ts-jest
+    // compiles in memory. Nothing should ever emit from this config.
+    "noEmit": true,
+    "ignoreDeprecations": "6.0"
   },
-  "include": ["**/*.ts"]
+  // `../src` is listed explicitly so the imported sources are program members rather
+  // than incidental includes pulled in by module resolution.
+  "include": ["**/*.ts", "../src/**/*.ts"]
 }
