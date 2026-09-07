@@ -5,4 +5,4 @@
 process.env.NODE_ENV = 'test';
 process.env.SESSION_TOKEN = 'e2e-test-session-token';
 process.env.SWAGGER_ENABLED = 'true';
-process.env.CORS_ORIGINS = '*';
+process.env.FRONTEND_CORS_ORIGINS = 'https://int-next.ioanatatu.com';

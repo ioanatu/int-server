@@ -1,26 +1,23 @@
 # Render Blueprint — https://render.com/docs/blueprint-spec
-# Apply with: Render Dashboard -> New -> Blueprint, pointed at this repository.
 services:
   - type: web
     name: intnext-server
     runtime: node
-    # `free` spins the instance down after ~15 minutes of inactivity, so the first
-    # request afterwards pays a cold start. Move to `starter` for a always-on PoC.
     plan: free
     region: frankfurt
     buildCommand: npm ci && npm run build
     startCommand: npm run start:prod
-    # Unauthenticated liveness probe — Render marks the deploy live once this returns 200.
-    healthCheckPath: /health
+    healthCheckPath: /health # Render marks the deploy live once this returns 200
     autoDeployTrigger: commit
     envVars:
       - key: NODE_ENV
         value: production
-      # Generated once by Render and stored as a secret; read it from the dashboard
-      # to hand out to clients, and overwrite it to rotate.
+
       - key: SESSION_TOKEN
         generateValue: true
+
       - key: SWAGGER_ENABLED
-        value: "true"
-      - key: CORS_ORIGINS
-        value: "*"
+        value: 'true'
+
+      - key: FRONTEND_CORS_ORIGINS
+        value: https://int-next.ioanatatu.com # Comma-separated allow-list of browser origins permitted to call the API

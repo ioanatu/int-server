@@ -170,13 +170,13 @@ in tests and in the deployed build.
 
 Validated at boot with Joi — the process refuses to start on a bad configuration.
 
-| Variable          | Required | Default       | Purpose                                        |
-| ----------------- | -------- | ------------- | ---------------------------------------------- |
-| `SESSION_TOKEN`   | **yes**  | —             | Expected `X-SESSION` value (min. 8 characters) |
-| `PORT`            | no       | `3000`        | Injected by Render                             |
-| `NODE_ENV`        | no       | `development` | `development` \| `production` \| `test`        |
-| `SWAGGER_ENABLED` | no       | `true`        | Set to `false` to hide `/api-docs`             |
-| `CORS_ORIGINS`    | no       | `*`           | Comma-separated allow-list, or `*`             |
+| Variable                | Required | Default       | Purpose                                        |
+| ----------------------- | -------- | ------------- | ---------------------------------------------- |
+| `SESSION_TOKEN`         | **yes**  | —             | Expected `X-SESSION` value (min. 8 characters) |
+| `PORT`                  | no       | `3000`        | Injected by Render                             |
+| `NODE_ENV`              | no       | `development` | `development` \| `production` \| `test`        |
+| `SWAGGER_ENABLED`       | no       | `true`        | Set to `false` to hide `/api-docs`             |
+| `FRONTEND_CORS_ORIGINS` | no       | see below     | Comma-separated allow-list, or `*` for any     |
 
 ---
 
@@ -199,14 +199,14 @@ configuration.
 
 **Option B — manual web service:**
 
-| Setting           | Value                                                                                         |
-| ----------------- | --------------------------------------------------------------------------------------------- |
-| Runtime           | Node                                                                                          |
-| Root directory    | _(repository root)_                                                                           |
-| Build command     | `npm ci && npm run build`                                                                     |
-| Start command     | `npm run start:prod`                                                                          |
-| Health check path | `/health`                                                                                     |
-| Environment       | `NODE_ENV=production`, `SESSION_TOKEN=<generate a secret>`, `SWAGGER_ENABLED`, `CORS_ORIGINS` |
+| Setting           | Value                                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------------------------ |
+| Runtime           | Node                                                                                                   |
+| Root directory    | _(repository root)_                                                                                    |
+| Build command     | `npm ci && npm run build`                                                                              |
+| Start command     | `npm run start:prod`                                                                                   |
+| Health check path | `/health`                                                                                              |
+| Environment       | `NODE_ENV=production`, `SESSION_TOKEN=<generate a secret>`, `SWAGGER_ENABLED`, `FRONTEND_CORS_ORIGINS` |
 
 Generate a token with:
 

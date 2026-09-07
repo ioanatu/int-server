@@ -4,8 +4,9 @@ import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import helmet from 'helmet';
 import { AppModule } from './app.module';
-import { API_PREFIX, SESSION_SECURITY_SCHEME, SWAGGER_PATH } from './common/constants';
+import { API_PREFIX, SWAGGER_PATH } from './common/constants';
 import { AllExceptionsFilter } from './common/filters/http-exception.filter';
+import { buildCorsOptions } from './config/cors.options';
 import { setupSwagger } from './swagger';
 
 async function bootstrap(): Promise<void> {
@@ -13,7 +14,6 @@ async function bootstrap(): Promise<void> {
   const configService = app.get(ConfigService);
   const logger = new Logger('Bootstrap');
 
-  // /api/v1/... — the version lives in the URL so future breaking changes can coexist.
   app.setGlobalPrefix(API_PREFIX, { exclude: ['health'] });
   app.enableVersioning({ type: VersioningType.URI, defaultVersion: '1' });
 
@@ -24,11 +24,14 @@ async function bootstrap(): Promise<void> {
     }),
   );
 
-  app.enableCors({
-    origin: configService.get('corsOrigins'),
-    methods: ['GET', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', SESSION_SECURITY_SCHEME],
-  });
+  const corsOrigins = configService.get<string[] | boolean>('corsOrigins') ?? [];
+  app.enableCors(buildCorsOptions(corsOrigins));
+
+  if (corsOrigins === true && configService.get<string>('nodeEnv') === 'production') {
+    logger.warn(
+      'FRONTEND_CORS_ORIGINS is "*": every origin may read this API. Set an explicit allow-list.',
+    );
+  }
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -52,6 +55,7 @@ async function bootstrap(): Promise<void> {
 
   logger.log(`API listening on port ${port}`);
   logger.log(`Base path: /${API_PREFIX}/v1`);
+  logger.log(`CORS origins: ${corsOrigins === true ? '* (any)' : String(corsOrigins)}`);
   if (configService.get<boolean>('swaggerEnabled')) {
     logger.log(`Swagger UI: /${SWAGGER_PATH}`);
   }

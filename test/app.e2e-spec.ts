@@ -5,12 +5,14 @@ import request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { API_PREFIX } from '../src/common/constants';
 import { AllExceptionsFilter } from '../src/common/filters/http-exception.filter';
+import { buildCorsOptions } from '../src/config/cors.options';
 import { setupSwagger } from '../src/swagger';
 
 // Kept in sync with test/setup-env.ts, which seeds the environment before AppModule loads.
 const SESSION_TOKEN = process.env.SESSION_TOKEN as string;
 const BASE = `/${API_PREFIX}/v1/suppliers`;
 const INDUSTRIES = `/${API_PREFIX}/v1/industries`;
+const ALLOWED_ORIGIN = 'https://int-next.ioanatatu.com';
 
 describe('IntNext PoC API (e2e)', () => {
   let app: INestApplication;
@@ -30,6 +32,7 @@ describe('IntNext PoC API (e2e)', () => {
       new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true, transform: true }),
     );
     app.useGlobalFilters(new AllExceptionsFilter());
+    app.enableCors(buildCorsOptions([ALLOWED_ORIGIN]));
     setupSwagger(app);
 
     await app.init();
@@ -304,6 +307,59 @@ describe('IntNext PoC API (e2e)', () => {
       }
 
       expect(weak).toEqual([]);
+    });
+  });
+
+  describe('CORS', () => {
+    it('answers the preflight for an allowed origin with the session header', async () => {
+      const response = await request(server)
+        .options(BASE)
+        .set('Origin', ALLOWED_ORIGIN)
+        .set('Access-Control-Request-Method', 'GET')
+        .set('Access-Control-Request-Headers', 'x-session')
+        .expect(204);
+
+      expect(response.headers['access-control-allow-origin']).toBe(ALLOWED_ORIGIN);
+      expect(response.headers['access-control-allow-headers']).toMatch(/X-SESSION/i);
+      expect(response.headers['access-control-allow-methods']).toMatch(/GET/);
+      // No cookies are involved; the browser must not be told to send credentials.
+      expect(response.headers['access-control-allow-credentials']).toBeUndefined();
+    });
+
+    it('does not reach the session guard on a preflight', async () => {
+      // A 401 here would mean the guard rejects the credential-less OPTIONS request and the
+      // browser never gets to send the real one.
+      await request(server)
+        .options(BASE)
+        .set('Origin', ALLOWED_ORIGIN)
+        .set('Access-Control-Request-Method', 'GET')
+        .expect(204);
+    });
+
+    it('omits the allow-origin header for a disallowed origin', async () => {
+      const response = await request(server)
+        .get(BASE)
+        .set('Origin', 'https://evil.example')
+        .set('X-SESSION', SESSION_TOKEN)
+        .expect(200);
+
+      expect(response.headers['access-control-allow-origin']).toBeUndefined();
+    });
+
+    it('echoes the allow-origin header on an allowed cross-origin GET', async () => {
+      const response = await request(server)
+        .get(BASE)
+        .set('Origin', ALLOWED_ORIGIN)
+        .set('X-SESSION', SESSION_TOKEN)
+        .expect(200);
+
+      expect(response.headers['access-control-allow-origin']).toBe(ALLOWED_ORIGIN);
+    });
+
+    it('keeps CORS headers on error responses so the browser can read the status', async () => {
+      const response = await request(server).get(BASE).set('Origin', ALLOWED_ORIGIN).expect(401);
+
+      expect(response.headers['access-control-allow-origin']).toBe(ALLOWED_ORIGIN);
     });
   });
 });
