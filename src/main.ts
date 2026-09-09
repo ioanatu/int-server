@@ -14,6 +14,8 @@ async function bootstrap(): Promise<void> {
   const configService = app.get(ConfigService);
   const logger = new Logger('Bootstrap');
 
+  console.log('______ ', configService);
+
   app.setGlobalPrefix(API_PREFIX, { exclude: ['health'] });
   app.enableVersioning({ type: VersioningType.URI, defaultVersion: '1' });
 
