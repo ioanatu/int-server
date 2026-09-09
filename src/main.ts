@@ -25,7 +25,6 @@ async function bootstrap(): Promise<void> {
   );
 
   const corsOrigins = configService.get<string[] | boolean>('corsOrigins') ?? [];
-  console.log('______ /// ', corsOrigins);
 
   app.enableCors(buildCorsOptions(corsOrigins));
 
