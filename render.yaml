@@ -20,4 +20,4 @@ services:
         value: 'true'
 
       - key: FRONTEND_CORS_ORIGINS
-        value: https://int-next.ioanatatu.com # Comma-separated allow-list of browser origins permitted to call the API
+        value: https://int-next.ioanatatu.com,http://localhost:5173
