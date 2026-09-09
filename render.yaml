@@ -18,6 +18,3 @@ services:
 
       - key: SWAGGER_ENABLED
         value: 'true'
-
-      - key: FRONTEND_CORS_ORIGINS
-        value: https://int-next.ioanatatu.com,http://localhost:5173

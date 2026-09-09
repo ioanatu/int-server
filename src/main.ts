@@ -14,8 +14,6 @@ async function bootstrap(): Promise<void> {
   const configService = app.get(ConfigService);
   const logger = new Logger('Bootstrap');
 
-  console.log('______ ', configService);
-
   app.setGlobalPrefix(API_PREFIX, { exclude: ['health'] });
   app.enableVersioning({ type: VersioningType.URI, defaultVersion: '1' });
 
@@ -27,6 +25,8 @@ async function bootstrap(): Promise<void> {
   );
 
   const corsOrigins = configService.get<string[] | boolean>('corsOrigins') ?? [];
+  console.log('______ /// ', corsOrigins);
+
   app.enableCors(buildCorsOptions(corsOrigins));
 
   if (corsOrigins === true && configService.get<string>('nodeEnv') === 'production') {

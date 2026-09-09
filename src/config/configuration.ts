@@ -7,7 +7,10 @@ export interface AppConfig {
 }
 
 export const DEFAULT_DEV_CORS_ORIGINS = ['http://localhost:5173', 'http://127.0.0.1:5173'];
-export const DEFAULT_PROD_CORS_ORIGINS = ['https://int-next.ioanatatu.com'];
+export const DEFAULT_PROD_CORS_ORIGINS = [
+  'https://int-next.ioanatatu.com',
+  'http://localhost:5173',
+];
 
 export const parseCorsOrigins = (raw: string | undefined, nodeEnv: string): string[] | boolean => {
   const configured: string[] = (raw ?? '')
