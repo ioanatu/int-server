@@ -55,18 +55,34 @@ be used as an oracle, and `.env` is git-ignored.
 Paginated, searchable, filterable list. All query parameters are optional and are
 combined with **AND**.
 
-| Parameter          | Type    | Notes                                                                                     |
-| ------------------ | ------- | ----------------------------------------------------------------------------------------- |
-| `search`           | string  | Case-insensitive substring match across id, name, industry, country name and country code |
-| `country`          | string  | ISO 3166-1 alpha-2, case-insensitive (`de` = `DE`)                                        |
-| `status`           | enum    | `active` \| `inactive` \| `onboarding` \| `offboarded`                                    |
-| `riskLevel`        | enum    | `low` \| `medium` \| `high`                                                               |
-| `assessmentStatus` | enum    | `completed` \| `in_progress` \| `not_started` \| `expired`                                |
-| `industry`         | string  | An `id` from `GET /api/v1/industries` (e.g. `food-beverage`) or the display name          |
-| `page`             | integer | ≥ 1, default `1`                                                                          |
-| `limit`            | integer | 1–100, default `10`                                                                       |
+| Parameter          | Type     | Notes                                                                                                                                   |
+| ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `search`           | string   | Case-insensitive substring match across id, name, industry, country name and country code                                               |
+| `country`          | string[] | One or more ISO 3166-1 alpha-2 codes, case-insensitive. Repeat the parameter or pass a comma-separated list; matches on **any** of them |
+| `status`           | enum     | `active` \| `inactive` \| `onboarding` \| `offboarded`                                                                                  |
+| `riskLevel`        | enum     | `low` \| `medium` \| `high`                                                                                                             |
+| `assessmentStatus` | enum     | `completed` \| `in_progress` \| `not_started` \| `expired`                                                                              |
+| `industry`         | string   | An `id` from `GET /api/v1/industries` (e.g. `food-beverage`) or the display name                                                        |
+| `page`             | integer  | ≥ 1, default `1`                                                                                                                        |
+| `limit`            | integer  | 1–100, default `10`                                                                                                                     |
 
 Unknown query parameters and out-of-range values are rejected with `400`.
+
+`country` is a multi-select. Both notations are accepted and mean the same thing, so a
+multi-select in the UI can use whichever its HTTP client produces:
+
+```bash
+curl -H "X-SESSION: $SESSION_TOKEN" \
+  "http://localhost:3000/api/v1/suppliers?country=DE&country=FR&country=NL"
+
+curl -H "X-SESSION: $SESSION_TOKEN" \
+  "http://localhost:3000/api/v1/suppliers?country=DE,FR,NL"
+```
+
+The selected codes are OR-ed together, and the result is AND-ed with the other filters —
+so the query above combined with `&status=active` returns active suppliers in Germany,
+France **or** the Netherlands. Codes are upper-cased and de-duplicated, and an entry that
+is not exactly two letters is rejected with `400`.
 
 ```json
 {
@@ -116,6 +132,35 @@ curl -H "X-SESSION: $SESSION_TOKEN" \
 
 The list is derived from the supplier records rather than stored separately, so the
 values it advertises can never drift out of sync with what is actually filterable.
+
+### `GET /api/v1/countries`
+
+Reference data for building a country filter. Returns every country present in the
+supplier data with a supplier count, sorted by name. Unpaginated and takes no query
+parameters — the same shape as `GET /api/v1/industries`, so one filter component can
+render either.
+
+```json
+{
+  "data": [
+    { "id": "CN", "name": "China", "supplierCount": 4 },
+    { "id": "CZ", "name": "Czechia", "supplierCount": 3 }
+  ],
+  "total": 14
+}
+```
+
+Each `id` is the ISO 3166-1 alpha-2 code — already stable and URL-safe, so no slug is
+needed the way it is for industry names. Pass one or several straight back as the
+`country` filter:
+
+```bash
+curl -H "X-SESSION: $SESSION_TOKEN" \
+  "http://localhost:3000/api/v1/suppliers?country=CN,CZ"
+```
+
+Like industries, the list is derived from the supplier records, so it only ever
+advertises values that actually match something.
 
 ### Error envelope
 
@@ -235,6 +280,7 @@ int-server/
 ├── src/
 │   ├── common/            # cross-cutting: session guard, error filter, shared DTOs
 │   ├── config/            # typed configuration + Joi env validation
+│   ├── countries/         # filter reference data, derived from the supplier fixtures
 │   ├── data/              # the two JSON fixtures
 │   ├── health/            # unauthenticated liveness probe
 │   ├── industries/        # filter reference data, derived from the supplier fixtures

@@ -13,7 +13,8 @@ export class SuppliersService {
   /**
    * Applies search, filters and pagination over the supplier fixtures.
    *
-   * Filters are combined with AND; every one of them is optional. Ordering is the
+   * Filters are combined with AND; every one of them is optional. `country` accepts
+   * several values, which are combined with OR among themselves. Ordering is the
    * fixture's own (stable) order so pagination is repeatable across requests.
    */
   findAll(query: ListSuppliersQueryDto): PaginatedSuppliersDto {
@@ -24,12 +25,15 @@ export class SuppliersService {
     // GET /api/v1/industries ("food-beverage") or the display name
     // ("Food & Beverage"), in any casing, with one comparison.
     const industryId = industry ? toSlug(industry) : undefined;
+    // `country` is a multi-select: a supplier matches when it sits in any of the
+    // selected countries (OR within the filter, AND against the other filters).
+    const countryCodes = country?.length ? new Set(country) : undefined;
 
     const matches = this.repository.findAllSummaries().filter((supplier) => {
       if (needle && !SuppliersService.matchesSearch(supplier, needle)) {
         return false;
       }
-      if (country && supplier.country.code.toUpperCase() !== country) {
+      if (countryCodes && !countryCodes.has(supplier.country.code.toUpperCase())) {
         return false;
       }
       if (status && supplier.relationship.status !== status) {

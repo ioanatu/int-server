@@ -90,7 +90,7 @@ describe('SuppliersService', () => {
     });
 
     it.each([
-      ['country', { country: 'DE' } as const, (s: { country: string }) => s.country === 'DE'],
+      ['country', { country: ['DE'] }, (s: { country: string }) => s.country === 'DE'],
       ['status', { status: 'active' } as const, (s: { status: string }) => s.status === 'active'],
       [
         'riskLevel',
@@ -108,7 +108,7 @@ describe('SuppliersService', () => {
       const result = service.findAll(
         query({
           search: 'example',
-          country: 'DE',
+          country: ['DE'],
           status: 'active',
           riskLevel: 'high',
           limit: 100,
@@ -122,18 +122,94 @@ describe('SuppliersService', () => {
 
     it('yields no results when filters contradict each other', () => {
       const result = service.findAll(
-        query({ country: 'DE', riskLevel: 'high', status: 'offboarded', search: 'example' }),
+        query({ country: ['DE'], riskLevel: 'high', status: 'offboarded', search: 'example' }),
       );
 
       expect(result.pagination.total).toBe(0);
     });
 
     it('counts the full match set, not just the returned page', () => {
-      const all = service.findAll(query({ country: 'DE', limit: 100 }));
-      const firstPage = service.findAll(query({ country: 'DE', limit: 1 }));
+      const all = service.findAll(query({ country: ['DE'], limit: 100 }));
+      const firstPage = service.findAll(query({ country: ['DE'], limit: 1 }));
 
       expect(firstPage.pagination.total).toBe(all.pagination.total);
       expect(firstPage.data).toHaveLength(1);
+    });
+
+    it('filters by several countries at once, OR-ing them together', () => {
+      const summaries = repository.findAllSummaries();
+      const expected = summaries.filter((s) => ['DE', 'FR'].includes(s.country.code)).length;
+
+      const result = service.findAll(query({ country: ['DE', 'FR'], limit: 100 }));
+
+      expect(expected).toBeGreaterThan(0);
+      expect(result.pagination.total).toBe(expected);
+      expect(result.data.every((s) => ['DE', 'FR'].includes(s.country))).toBe(true);
+      expect(new Set(result.data.map((s) => s.country))).toEqual(new Set(['DE', 'FR']));
+    });
+
+    it('returns the union of the single-country result sets', () => {
+      const de = service.findAll(query({ country: ['DE'], limit: 100 })).pagination.total;
+      const fr = service.findAll(query({ country: ['FR'], limit: 100 })).pagination.total;
+      const both = service.findAll(query({ country: ['DE', 'FR'], limit: 100 })).pagination.total;
+
+      expect(both).toBe(de + fr);
+    });
+
+    it('ignores an unknown code among known ones', () => {
+      const known = service.findAll(query({ country: ['DE'], limit: 100 }));
+      const withUnknown = service.findAll(query({ country: ['DE', 'ZZ'], limit: 100 }));
+
+      expect(withUnknown.data).toEqual(known.data);
+    });
+
+    it('returns an empty page when no selected country exists', () => {
+      const result = service.findAll(query({ country: ['ZZ', 'XX'], limit: 100 }));
+
+      expect(result.data).toEqual([]);
+      expect(result.pagination.total).toBe(0);
+    });
+
+    it('treats a repeated country code as a single selection', () => {
+      const once = service.findAll(query({ country: ['DE'], limit: 100 }));
+      const twice = service.findAll(query({ country: ['DE', 'DE'], limit: 100 }));
+
+      expect(twice.pagination.total).toBe(once.pagination.total);
+      expect(twice.data).toEqual(once.data);
+    });
+
+    it('applies no country filter when the list is empty', () => {
+      const filtered = service.findAll(query({ country: [], limit: 100 }));
+      const unfiltered = service.findAll(query({ limit: 100 }));
+
+      expect(filtered.pagination.total).toBe(unfiltered.pagination.total);
+    });
+
+    it('combines a multi-country selection with the other filters', () => {
+      const result = service.findAll(
+        query({ country: ['DE', 'FR'], status: 'active', limit: 100 }),
+      );
+
+      expect(result.data.every((s) => ['DE', 'FR'].includes(s.country))).toBe(true);
+      expect(result.data.every((s) => s.status === 'active')).toBe(true);
+      expect(result.pagination.total).toBe(
+        repository
+          .findAllSummaries()
+          .filter(
+            (s) => ['DE', 'FR'].includes(s.country.code) && s.relationship.status === 'active',
+          ).length,
+      );
+    });
+
+    it('paginates a multi-country result set', () => {
+      const all = service.findAll(query({ country: ['DE', 'FR'], limit: 100 }));
+      const firstPage = service.findAll(query({ country: ['DE', 'FR'], page: 1, limit: 2 }));
+
+      expect(all.pagination.total).toBeGreaterThan(2);
+      expect(firstPage.data).toHaveLength(2);
+      expect(firstPage.pagination.total).toBe(all.pagination.total);
+      expect(firstPage.pagination.hasNext).toBe(true);
+      expect(firstPage.data).toEqual(all.data.slice(0, 2));
     });
 
     it('filters by industry case-insensitively', () => {

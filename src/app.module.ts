@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core';
 import configuration from './config/configuration';
 import { validationSchema } from './config/validation.schema';
 import { SessionGuard } from './common/guards/session.guard';
+import { CountriesModule } from './countries/countries.module';
 import { HealthModule } from './health/health.module';
 import { IndustriesModule } from './industries/industries.module';
 import { SuppliersModule } from './suppliers/suppliers.module';
@@ -19,6 +20,7 @@ import { SuppliersModule } from './suppliers/suppliers.module';
     }),
     SuppliersModule,
     IndustriesModule,
+    CountriesModule,
     HealthModule,
   ],
   providers: [

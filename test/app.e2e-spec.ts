@@ -12,6 +12,7 @@ import { setupSwagger } from '../src/swagger';
 const SESSION_TOKEN = process.env.SESSION_TOKEN as string;
 const BASE = `/${API_PREFIX}/v1/suppliers`;
 const INDUSTRIES = `/${API_PREFIX}/v1/industries`;
+const COUNTRIES = `/${API_PREFIX}/v1/countries`;
 const ALLOWED_ORIGIN = 'https://int-next.ioanatatu.com';
 
 describe('IntNext PoC API (e2e)', () => {
@@ -75,6 +76,10 @@ describe('IntNext PoC API (e2e)', () => {
       await request(server).get(INDUSTRIES).expect(401);
     });
 
+    it('protects the countries endpoint as well', async () => {
+      await request(server).get(COUNTRIES).expect(401);
+    });
+
     it('leaves the health endpoint public', async () => {
       const response = await request(server).get('/health').expect(200);
 
@@ -134,10 +139,88 @@ describe('IntNext PoC API (e2e)', () => {
       expect(response.body.data.every((s: { country: string }) => s.country === 'DE')).toBe(true);
     });
 
+    it('selects several countries with a repeated parameter', async () => {
+      const response = await authed(`${BASE}?country=DE&country=FR&limit=100`).expect(200);
+
+      expect(response.body.pagination.total).toBeGreaterThan(0);
+      expect(
+        response.body.data.every((s: { country: string }) => ['DE', 'FR'].includes(s.country)),
+      ).toBe(true);
+      expect(new Set(response.body.data.map((s: { country: string }) => s.country))).toEqual(
+        new Set(['DE', 'FR']),
+      );
+    });
+
+    it('selects several countries with a comma-separated list', async () => {
+      const repeated = await authed(`${BASE}?country=DE&country=FR&limit=100`).expect(200);
+      const csv = await authed(`${BASE}?country=DE,FR&limit=100`).expect(200);
+
+      expect(csv.body).toEqual(repeated.body);
+    });
+
+    it('returns the union of the single-country result sets', async () => {
+      const de = await authed(`${BASE}?country=DE&limit=1`).expect(200);
+      const fr = await authed(`${BASE}?country=FR&limit=1`).expect(200);
+      const both = await authed(`${BASE}?country=DE,FR&limit=1`).expect(200);
+
+      expect(both.body.pagination.total).toBe(de.body.pagination.total + fr.body.pagination.total);
+    });
+
+    it('accepts a lower-cased multi-country selection', async () => {
+      const lower = await authed(`${BASE}?country=de,fr&limit=100`).expect(200);
+      const upper = await authed(`${BASE}?country=DE,FR&limit=100`).expect(200);
+
+      expect(lower.body).toEqual(upper.body);
+    });
+
+    it('treats a repeated code as a single selection', async () => {
+      const once = await authed(`${BASE}?country=DE&limit=100`).expect(200);
+      const twice = await authed(`${BASE}?country=DE&country=de&limit=100`).expect(200);
+
+      expect(twice.body).toEqual(once.body);
+    });
+
+    it('combines a multi-country selection with the other filters', async () => {
+      const response = await authed(`${BASE}?country=DE,FR&status=active&limit=100`).expect(200);
+
+      expect(response.body.pagination.total).toBeGreaterThan(0);
+      expect(
+        response.body.data.every(
+          (s: { country: string; status: string }) =>
+            ['DE', 'FR'].includes(s.country) && s.status === 'active',
+        ),
+      ).toBe(true);
+    });
+
+    it('paginates a multi-country result set', async () => {
+      const all = await authed(`${BASE}?country=DE,FR&limit=100`).expect(200);
+      const page = await authed(`${BASE}?country=DE,FR&page=1&limit=2`).expect(200);
+
+      expect(all.body.pagination.total).toBeGreaterThan(2);
+      expect(page.body.data).toHaveLength(2);
+      expect(page.body.pagination).toMatchObject({
+        page: 1,
+        limit: 2,
+        total: all.body.pagination.total,
+        hasNext: true,
+      });
+      expect(page.body.data).toEqual(all.body.data.slice(0, 2));
+    });
+
+    it('returns an empty page when no selected country exists', async () => {
+      const response = await authed(`${BASE}?country=ZZ,XX&limit=100`).expect(200);
+
+      expect(response.body.data).toEqual([]);
+      expect(response.body.pagination.total).toBe(0);
+    });
+
     it.each([
       ['status', `${BASE}?status=bogus`],
       ['riskLevel', `${BASE}?riskLevel=extreme`],
       ['country', `${BASE}?country=DEU`],
+      ['country', `${BASE}?country=DE,DEU`],
+      ['country', `${BASE}?country=DE&country=DEU`],
+      ['country', `${BASE}?country=`],
       ['page', `${BASE}?page=0`],
       ['page', `${BASE}?page=abc`],
       ['limit', `${BASE}?limit=1000`],
@@ -248,6 +331,70 @@ describe('IntNext PoC API (e2e)', () => {
     });
   });
 
+  describe(`GET ${COUNTRIES}`, () => {
+    it('returns every country with an ISO code id and a supplier count', async () => {
+      const response = await authed(COUNTRIES).expect(200);
+
+      expect(Object.keys(response.body).sort()).toEqual(['data', 'total']);
+      expect(response.body.total).toBe(response.body.data.length);
+      expect(response.body.total).toBeGreaterThan(0);
+
+      for (const country of response.body.data) {
+        expect(country).toEqual({
+          id: expect.stringMatching(/^[A-Z]{2}$/),
+          name: expect.any(String),
+          supplierCount: expect.any(Number),
+        });
+        expect(country.supplierCount).toBeGreaterThan(0);
+      }
+    });
+
+    it('sorts countries by name', async () => {
+      const names = (await authed(COUNTRIES).expect(200)).body.data.map(
+        (c: { name: string }) => c.name,
+      );
+
+      expect(names).toEqual([...names].sort((a: string, b: string) => a.localeCompare(b)));
+    });
+
+    it('counts sum to the full supplier total', async () => {
+      const countries = await authed(COUNTRIES).expect(200);
+      const suppliers = await authed(`${BASE}?limit=1`).expect(200);
+
+      const sum = countries.body.data.reduce(
+        (acc: number, c: { supplierCount: number }) => acc + c.supplierCount,
+        0,
+      );
+      expect(sum).toBe(suppliers.body.pagination.total);
+    });
+
+    it('advertises ids that each filter the supplier list to the advertised count', async () => {
+      const countries = await authed(COUNTRIES).expect(200);
+
+      // The contract that makes this endpoint useful: every id it hands the frontend
+      // must work verbatim as a `country` filter value.
+      for (const country of countries.body.data as { id: string; supplierCount: number }[]) {
+        const filtered = await authed(`${BASE}?country=${country.id}&limit=100`).expect(200);
+        expect(filtered.body.pagination.total).toBe(country.supplierCount);
+        expect(filtered.body.data).toHaveLength(country.supplierCount);
+      }
+    });
+
+    it('selecting every advertised id returns the whole supplier list', async () => {
+      const countries = await authed(COUNTRIES).expect(200);
+      const ids = (countries.body.data as { id: string }[]).map((c) => c.id).join(',');
+
+      const filtered = await authed(`${BASE}?country=${ids}&limit=100`).expect(200);
+      const unfiltered = await authed(`${BASE}?limit=100`).expect(200);
+
+      expect(filtered.body).toEqual(unfiltered.body);
+    });
+
+    it('rejects unknown query parameters', async () => {
+      await authed(`${COUNTRIES}?page=1`).expect(400);
+    });
+  });
+
   describe('OpenAPI', () => {
     it('serves the Swagger UI', async () => {
       const response = await request(server).get('/api-docs').expect(200);
@@ -261,11 +408,14 @@ describe('IntNext PoC API (e2e)', () => {
       expect(response.body.openapi).toMatch(/^3\./);
       expect(response.body.info.title).toBe('IntNext PoC API');
       expect(Object.keys(response.body.paths)).toEqual(
-        expect.arrayContaining([`${BASE}`, `${BASE}/{supplierId}`, INDUSTRIES]),
+        expect.arrayContaining([`${BASE}`, `${BASE}/{supplierId}`, INDUSTRIES, COUNTRIES]),
       );
       expect(response.body.paths[INDUSTRIES].get.security).toEqual([{ 'X-SESSION': [] }]);
+      expect(response.body.paths[COUNTRIES].get.security).toEqual([{ 'X-SESSION': [] }]);
       expect(response.body.components.schemas).toHaveProperty('IndustryListDto');
       expect(response.body.components.schemas).toHaveProperty('IndustryDto');
+      expect(response.body.components.schemas).toHaveProperty('CountryOptionListDto');
+      expect(response.body.components.schemas).toHaveProperty('CountryOptionDto');
       expect(response.body.components.securitySchemes).toHaveProperty('X-SESSION');
       expect(response.body.components.securitySchemes['X-SESSION']).toMatchObject({
         type: 'apiKey',
@@ -273,6 +423,55 @@ describe('IntNext PoC API (e2e)', () => {
         name: 'X-SESSION',
       });
       expect(response.body.paths[BASE].get.security).toEqual([{ 'X-SESSION': [] }]);
+    });
+
+    it('keeps the country filter schema distinct from the nested address country', async () => {
+      const response = await request(server).get('/api-docs-json').expect(200);
+
+      // Nest keys components.schemas by class name, so a reference-data DTO called
+      // CountryDto would silently overwrite the {code, name} object nested in a
+      // supplier's address — and generated clients would get the wrong shape for one
+      // of them with no error anywhere.
+      const schemas = response.body.components.schemas;
+
+      expect(Object.keys(schemas.CountryDto.properties).sort()).toEqual(['code', 'name']);
+      expect(Object.keys(schemas.CountryOptionDto.properties).sort()).toEqual([
+        'id',
+        'name',
+        'supplierCount',
+      ]);
+      expect(schemas.CountryOptionListDto.properties.data.items.$ref).toBe(
+        '#/components/schemas/CountryOptionDto',
+      );
+      expect(schemas.SupplierAddressDto.properties.country.$ref).toBe(
+        '#/components/schemas/CountryDto',
+      );
+    });
+
+    it('documents the country filter as a repeatable array parameter', async () => {
+      const response = await request(server).get('/api-docs-json').expect(200);
+
+      const params = response.body.paths[BASE].get.parameters as {
+        name: string;
+        in: string;
+        required: boolean;
+        schema: Record<string, unknown>;
+      }[];
+      const country = params.find((p) => p.name === 'country');
+
+      expect(country).toBeDefined();
+      expect(country!.in).toBe('query');
+      expect(country!.required).toBe(false);
+      expect(country!.schema).toMatchObject({ type: 'array', items: { type: 'string' } });
+    });
+
+    it('tags the countries endpoint as reference data', async () => {
+      const response = await request(server).get('/api-docs-json').expect(200);
+
+      expect(response.body.paths[COUNTRIES].get.tags).toEqual(['Countries']);
+      expect(response.body.tags.map((t: { name: string }) => t.name)).toEqual(
+        expect.arrayContaining(['Countries']),
+      );
     });
 
     it('types nullable properties concretely, so generated clients stay accurate', async () => {
