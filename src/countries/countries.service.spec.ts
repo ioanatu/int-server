@@ -1,13 +1,12 @@
 import { Test } from '@nestjs/testing';
 import { SuppliersRepository } from '../suppliers/suppliers.repository';
 import { CountriesService } from './countries.service';
-import { describe, it, before } from 'node:test';
 
 describe('CountriesService', () => {
   let service: CountriesService;
   let repository: SuppliersRepository;
 
-  before(async () => {
+  beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       providers: [CountriesService, SuppliersRepository],
     }).compile();
